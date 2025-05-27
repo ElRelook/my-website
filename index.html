@@ -2,154 +2,106 @@
 <html lang="fr">
 
 <head>
-	<meta charset="utf-8">
-	<title>CV de BASDEVANT Cl&eacute;ment</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-	<link href="path/to/fontawesome/css/all.css" rel="stylesheet">
-
-	<link rel="stylesheet" href="styleV3.css">
+    <meta charset="utf-8">
+    <title>CV de BASDEVANT Clément</title>
+    <!-- Liens vers les fichiers CSS et JavaScript externes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/fontawesome/css/all.css">
+    <link rel="stylesheet" href="styleV3.css">
 </head>
 
 <body>
-	<a href="CVEnAnglais.html">
-    	<img src="angl.png" height="27" width="45" class="photo">
-	</a>
+    <!-- Image par-dessus la barre de menu -->
+    <a href="CVEnAnglais.html" class="photo">
+        <img src="images/angl.png" height="27" width="45">
+    </a>
 
-	<div class="cv-container">
-
-	<div class="head">
-    <div class="background-image"></div>
-    <div class="content">
-    	<center>
-        <h1><strong>Cl&eacute;ment BASDEVANT</strong></h1>
-        <h3 style="color:#000000;">&Eacute;tudiant en 3&egrave;me ann&eacute;e à SeaTech<br>Stage de fin d'&eacute;tudes ing&eacute;nieur: 22 semaines &agrave; partir de mars 2024</h3>
-        </center>
-        <div style="text-align: center;"> 
-            <a href="https://www.linkedin.com/in/clément-basdevant-253357230" target="_blank">
-                <img src="Photo_id2.png" height="273" width="273" style="border-radius: 50%;" />
-            </a>
+    <!-- Barre de menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php">Mon CV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php#a-propos-de-moi">À propos de moi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php#formation">Formation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php#experience">Expérience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?page=contact" style="background-color: red; color: white; padding: 5px; border-radius: 5px;">
+                            <i class="fas fa-envelope"></i> Me contacter
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
+
+    <div class="cv-container">
+        <?php
+        // Inclusion dynamique des fichiers selon la page demandée
+        if (isset($_GET['page'])){
+            if($_GET['page'] == 'contact'){
+                include("contact.php");
+            }
+            else if($_GET['page'] == 'formations'){
+                include("formations.php");
+            }
+            else if($_GET['page'] == 'confirmation'){
+                include("confirmation.php");
+            }
+            else if($_GET['page'] == 'experiences'){
+                include("experiences.php");
+            }
+            else if($_GET['page'] == 'formationitem1'){
+                include("formations.php#formationitem1");
+            }
+            else if($_GET['page'] == 'formationitem2'){
+                include("formations.php#formationitem2");
+            }
+            else if($_GET['page'] == 'formationitem3'){
+                include("formations.php#formationitem3");
+            }
+            else if($_GET['page'] == 'formationitem4'){
+                include("formations.php#formationitem4");
+            }
+            else if($_GET['page'] == 'formationitem5'){
+                include("formations.php#formationitem5");
+            }
+            else if($_GET['page'] == 'formationitem6'){
+                include("formations.php#formationitem6");
+            }
+            else
+            {
+                include("accueil.php");
+            }
+        } else
+        {
+            include("accueil.php");
+        }
+        ?>
+
     </div>
-</div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2023 BASDEVANT Clément. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
 
 
-	<div class="left-column">
-		<h2>Coordon&eacute;es</h2>
-
-
-		<center>
-		<a href="https://www.linkedin.com/in/clément-basdevant-253357230" target="_blank">
-    		<i class="fab fa-linkedin text-darkblue"></i> Cl&eacute;ment Basdevant
-		</a>
-	
-	<br>
-
-		<a href="tel:0781610646"><i class="fas fa-phone-alt"></i> 07 81 61 06 46</a><br>
-		<a href="https://www.google.com/maps/search/?api=1&query=7+avenue+de+Verdun,+38240+Meylan" target="_blank"><i class="fas fa-home"></i> 7 avenue de Verdun, 38240 Meylan</a><br>
-		<a href="mailto:clement.basdevant.24@seatech.fr"><i class="fas fa-envelope"></i> clement.basdevant.24@seatech.fr</a>
-
-
-
-
-		</center>
-		<br>
-		<br>
-
-		<h2>Profil personnel</h2>
-
-		<p style="text-align: justify;"> &Eacute;tudiant en &eacute;cole d’ing&eacute;nieurs à Toulon, je suis &agrave; la recherche d'un stage ing&eacute;nieur de fin d’&eacute;tudes de minimum 22 semaines entre mars et aout 2024 dans le domaine des sciences et des m&eacute;tiers de l'informatique. Ce stage s'inscrira dans le cadre de fin de troisi&egrave;me année de mon dipl&ocirc;me.
-		</p>
-
-		<h2 style="font-size: 21px;">Syst&egrave;mes d'information</h2>
-
-		<ul class="two-columns">
-  			<li><i class="fab fa-brands fa-python"></i> Python</li>
-  			<li><strong>C</strong> C/C++</li>
-  			<li><strong>LATEX</strong></li>
-  			<li>MATLAB</li>
-  			<li><i class="fab fa-brands fa-java"></i> Java</li>
-  			<li><i class="fab fa-brands fa-windows"></i> Microsoft Office</li>
-		</ul>
-
-		<h2>Langues</h2>
-
-		<ul class="two-columns">
-  			<li><strong>Français</strong></li>
-  			<li><strong>Anglais</strong></li>
-  			<li><strong>Allemand</strong></li>
-  			<li>Langue maternelle</li>
-  			<li>TOEIC 880</li>
-  			<li>B1</li>
-		</ul>
-
-		<h2>Loisirs</h2>
-		<ul>
-			<li><strong>Handball</strong></li>Pratiqué en compétition depuis 12 ans
-			<li><strong>Ski de fond</strong></li>Pratiqué en compétition depuis 9 ans
-			<li><strong>Course à pied</strong></li>Pratique de course et trail en compétition
-			<li><strong>Cyclisme</strong></li>
-
-
-		
-	</div>
-
-	<div class="right-column">
-		
-	
-
-		<div class="formation">
-		<h2 style="color:red";>Formation</h2>
-
-		<ul>
-			<a href="https://seatech.univ-tln.fr/" target="_blank">
-        		<h3 style="color:blue";>2021-2024 &Eacute;cole d'ing&eacute;nieur : SeaTech Toulon<br>&Eacute;cole partenaire de Grenoble INP  </h3>
-        		<img src="Logo_SeaTech.png" height="67" width="256" style="display:inline-block;" />
-    		</a>
-			<p>&Eacute;cole sp&eacute;cialis&eacute;e dans le domaine des sciences et technologies marines</p>
-			<h3 style="color:blue";>2022 : Projet de fin d'ann&eacute;e</h3>
-			<p> D&eacute;veloppement d'une application bas&eacute;e sur l'utilisation d'une intelligence artificielle d'un modèle de Deep Learning</p>
-			<h3 style="color:blue";>2021 : Projet TIPE</h3>
-			<p>&Eacute;tude de la nouvelle t&eacute;l&eacute;cabine de Chamrousse</p>
-			<h3 style="color:blue";>2019-2021: CPGE PTSI</h3>
-			<p>Lyc&eacute;e Vaucanson Grenoble</p>
-			<h3 style="color:blue";>2019: BACCALAUREAT SERIE S</h3>
-			<p>Lycée du Grésivaudan à Meylan</p>
-		</ul>
-		</div>
-		<div class="experience">
-		<h2 style="color:red";>Exp&eacute;rience professionnelle</h2>
-		<ul>
-			<h3 style="color:blue";>2023 : Norvège-NTNU</h3>
-			<p>Stage international de 2&egrave;me ann&eacute;e d'&eacute;cole d'ing&eacute;nieurs de 12 semaines à l’universit&eacute; de Trondheim, Norv&egrave;ge. D&eacute;veloppement en langage python d’une interface post-processing d’un logiciel d’hydrodynamique</p>
-			<h3 style="color:blue";>2022 : CORYS</h3>
-			<p>Stage de 1&egrave;re ann&eacute;e d'&eacute;cole d'ing&eacute;nieur de 5 semaines D&eacute;veloppement en langage python d’outils deparam&eacute;trage d’objets de mod&eacute;lisation &eacute;lectrique</p>
-			<h3 style="color:blue";>2016: Le Vieux Campeur</h3>
-			<p>Stage d'observation de 3&egrave;me d'une semaine &agrave; Grenoble Approvisionnement de rayon, &eacute;tiquetage et vente de produits</p>
-		</ul>
-		</div>
-		<div class="cursus">
-		<h2 style="color:red">&Eacute;l&eacute;ments du Cursus</h2>
-		<ul>
-			<h3 style="color:blue";>Outils math&eacute;matiques</h3>
-			<p>Analyse de donn&eacute;es multidimensionnelles – classification– apprentissage automatique - Algorithmique– M&eacute;thodes num&eacute;riquespour l’optimisation</p>
-			<h3 style="color:blue";>Informatique-programmation</h3>
-			<p>Conception d’Interfaces HommeMachine-Programmation Orient&eacute;e Objet-Syst&egrave;mes embarqu&eacute;s-Protocoles r&eacute;seaux-D&eacute;veloppement Java et Android -Applications mobiles-Communications num&eacute;riques</p>
-			<h3 style="color:blue";>Traitement du signal/images</h3>
-			<p>Traitement num&eacute;rique des signaux-Analyse spectrale – Estimation D&eacute;tection – D&eacute;cision-Traitement d’image avanc&eacute;-Instrumentation – Capteurs – Vision</p>
-			<h3 style="color:blue";>Gestion/Management/Communication</h3>
-		</ul>
-		</div>
-
-	</div>
-	</div>
 </body>
 
-<footer>
-    <p>Copyright &copy; 2023 BASDEVANT Cl&eacute;ment. Tous droits r&eacute;serv&eacute;s.</p>
-  </footer>
 </html>
-
-
-
