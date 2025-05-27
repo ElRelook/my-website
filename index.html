@@ -4,104 +4,223 @@
 <head>
     <meta charset="utf-8">
     <title>CV de BASDEVANT Clément</title>
-    <!-- Liens vers les fichiers CSS et JavaScript externes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/fontawesome/css/all.css">
+    <link href="path/to/fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="styleV3.css">
 </head>
 
 <body>
-    <!-- Image par-dessus la barre de menu -->
+     <!-- Image par-dessus la barre de menu -->
     <a href="CVEnAnglais.html" class="photo">
-        <img src="images/angl.png" height="27" width="45">
+        <img src="angl.png" height="27" width="45">
     </a>
 
-    <!-- Barre de menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Mon CV</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php#a-propos-de-moi">À propos de moi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php#formation">Formation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php#experience">Expérience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=contact" style="background-color: red; color: white; padding: 5px; border-radius: 5px;">
-                            <i class="fas fa-envelope"></i> Me contacter
-                        </a>
-                    </li>
+	   <!-- Barre de menu -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	    <div class="container-fluid">
+	        <a class="navbar-brand" href="#">Mon CV</a>
+	        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+	            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarNav">
+	            <ul class="navbar-nav">
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#a-propos-de-moi">À propos de moi</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#formation">Formation</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#experience">Expérience</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#me-contacter" style="background-color: red; color: white; padding: 5px; border-radius: 5px;">
+	                        <i class="fas fa-envelope"></i> Me contacter
+	                    </a>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+
+
+
+    <div class="cv-container">
+        <div class="head">
+	    <div class="background-image"></div>
+	    <div class="content">
+	        <div class="row">
+	            <div class="col-md-6">
+	                <a href="https://www.linkedin.com/in/clément-basdevant-253357230" target="_blank">
+	                    <br><br><br><br><br><br><br><br>
+	                    <center>
+	                    <img src="Photo_id4.jpeg" height="273" width="273" style="border-radius: 50%;" />
+	                	</center>
+	                </a>
+	            </div>
+	            <div class="col-md-6">
+	                <div style="text-align: left;">
+	                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	                    <div style="border: 2px solid #000; padding: 20px; border-radius: 10px;">
+	                        <h1 style="font-size: 2.5rem; font-weight: bold; color: #000; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); letter-spacing: 1px;">Clément BASDEVANT</h1>
+	                        <h3 style="color:#000000; font-size: 1.5rem;">&Eacute;tudiant en 3&egrave;me ann&eacute;e à SeaTech<br>Stage de fin d'&eacute;tudes ing&eacute;nieur: 22 semaines &agrave; partir de mars 2024</h3>
+	                    </div>
+	                    <br><br><br><br>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+
+
+
+
+
+
+        <div id="a-propos-de-moi" class="left-column">
+        	<center>
+        	<h2 style="color: #FFA500; font-size: 3rem; font-weight: bold;">&Agrave; propos de moi</h2>
+        	</center>
+
+        	<h2>Profil personnel</h2>
+            <p style="text-align: justify;"> &Eacute;tudiant en &eacute;cole d’ing&eacute;nieurs à Toulon, je suis &agrave; la recherche d'un stage ing&eacute;nieur de fin d’&eacute;tudes de minimum 22 semaines entre mars et aout 2024 dans le domaine des sciences et des m&eacute;tiers de l'informatique. Ce stage s'inscrira dans le cadre de fin de troisi&egrave;me année de mon dipl&ocirc;me.
+            </p>
+            <p style="text-align: justify;">Je suis actuellement en troisième année d'études au sein de l'école d'ingénieurs SeaTech à Toulon,France, dans la filière IRIS (IngénieRie et Sciences des Données, Information, Systèmes). Mon cursus académique dans cette filière m'a permis d'acquérir une solide base de compétences en sciences des données, gestion de l'information, et systèmes informatiques. De plus, j'ai eu l'opportunité d'effectuer deux stages, l'un chez CORYS et l'autre au laboratoire de l'NTNU en Norvège. Ces expériences m'ont apporté une vision pratique et une compréhension globale des enjeux technologiques actuels. J'ai pu y mettre en oeuvre des compétences variées, notamment en programmation Python.
+			</p>
+            
+                <div class="contact-card">
+			        <h2>Coordonnées</h2>
+			        <a href="https://www.linkedin.com/in/clément-basdevant-253357230" target="_blank">
+			            <i class="fab fa-linkedin"></i> Clément Basdevant
+			        </a>
+			        <br>
+			        <a href="tel:0781610646"><i class="fas fa-phone-alt"></i> 07 81 61 06 46</a><br>
+			        <a href="https://www.google.com/maps/search/?api=1&query=7+avenue+de+Verdun,+38240+Meylan" target="_blank"><i class="fas fa-home"></i> 7 avenue de Verdun, 38240 Meylan</a><br>
+			        <a href="mailto:clement.basdevant.24@seatech.fr"><i class="fas fa-envelope"></i> clement.basdevant.24@seatech.fr</a>
+			    </div>
+            <h2>Syst&egrave;mes d'information</h2>
+            <div class="bubbles-container">
+		        <div class="bubble"><i class="fab fa-python"></i> Python</div>
+		        <div class="bubble"><strong>C</strong> C/C++</div>
+		        <div class="bubble"><strong>LATEX</strong></div>
+		        <div class="bubble">MATLAB</div>
+		        <div class="bubble"><i class="fab fa-java"></i> Java</div>
+		        <div class="bubble"><i class="fab fa-windows"></i> Microsoft Office</div>
+		    </div>
+            <h2>Langues</h2>
+            <div class="language-cards-container">
+		        <div class="language-card">
+		            <h3>Français</h3>
+		            <p class="language-level">Langue maternelle</p>
+		        </div>
+		        <div class="language-card">
+		            <h3>Anglais</h3>
+		            <p class="language-level">TOEIC 880</p>
+		        </div>
+		        <div class="language-card">
+		            <h3>Allemand</h3>
+		            <p class="language-level">B1</p>
+		        </div>
+		    </div>
+            <div class="hobbies-container">
+        <div class="hobby-card">
+            <h2>Loisirs</h2>
+            <ul>
+                <li><i class="fas fa-futbol"></i> Handball - Pratiqué en compétition depuis 12 ans</li>
+                <li><i class="fas fa-skiing"></i> Ski de fond - Pratiqué en compétition depuis 9 ans</li>
+                <li><i class="fas fa-running"></i> Course à pied - Pratique de course et trail en compétition</li>
+                <li><i class="fas fa-biking"></i> Cyclisme</li>
+            </ul>
+        </div>
+    </div>
+        </div>
+
+        <div class="right-column">
+	            <div id="formation" class="formation">
+	        <h2 class="formation-title">Formation</h2>
+	        <div class="formation-item">
+	            <a href="https://seatech.univ-tln.fr/" target="_blank">
+	                <h3>2021-2024 &Eacute;cole d'ing&eacute;nieur : SeaTech Toulon</h3>
+	                <img src="Logo_SeaTech.png" height="67" width="256" alt="SeaTech logo">
+	            </a>
+	            <p>&Eacute;cole partenaire de Grenoble INP</p>
+	            <p>&Eacute;cole sp&eacute;cialis&eacute;e dans le domaine des sciences et technologies marines</p>
+	        </div>
+	        <div class="formation-item">
+	            <h3>2023 : Projet de fin d'ann&eacute;e</h3>
+	            <img src="deep.jpg" height="70" width="130" alt="Projet deep learning">
+	            <p>D&eacute;veloppement d'une application bas&eacute;e sur l'utilisation d'une intelligence artificielle d'un modèle de Deep Learning. Reconnaisance d'espèces de poissons avec développement d'une interface utilisateurs.</p>
+	        </div>
+	        <div class="formation-item">
+	            <h3>2023 : Projet Bejweled</h3>
+	            <img src="bejewel.png" height="100" width="100" alt="Projet bejewel">
+	            <p>Création d'un jeu de puzzle en c++ où les joueurs doivent aligner des gemmes de même couleur pour les faire disparaître et marquer des points, en essayant de réaliser des combinaisons spéciales pour des scores plus élevés.</p>
+	        </div>
+	        <div class="formation-item">
+	            <h3>2021 : Projet TIPE</h3>
+	            <img src="chamrousse.jpg" height="150" width="200" alt="Photo télécabine chamrousse">
+	            <p>&Eacute;tude de la nouvelle t&eacute;l&eacute;cabine de Chamrousse. Etude du choix du câble, de la partie motrice de la télécabine et de la tension appliqué au câble.</p>
+	        </div>
+	        <div class="formation-item">
+	            <h3>2019-2021: CPGE PTSI</h3>
+	            <img src="vox.jpg" height="150" width="150" alt="logo vaucanson">
+	            <p>Lyc&eacute;e Vaucanson Grenoble. Classe préparatoire aux grandes écoles, PTSI-PT</p>
+	        </div>
+	        <div class="formation-item">
+	            <h3>2019: BACCALAUREAT SERIE S</h3>
+	            <img src="LGM.png" height="120" width="276" alt="logo LGM">
+	            <p>Lycée du Grésivaudan à Meylan</p>
+	        </div>
+	    </div>
+			<div id="experience" class="experience">
+		        <h2 class="experience-title">Expérience professionnelle</h2>
+		        <div class="experience-item">
+		            <a href="https://www.ntnu.edu/" target="_blank">
+		                <h3>2023: Norvège-NTNU</h3>
+		                <img src="ntnu.png" height="100" width="100" alt="NTNU logo">
+		            </a>
+		            <p>Stage international de 2&egrave;me ann&eacute;e d'&eacute;cole d'ing&eacute;nieurs de 12 semaines à l’universit&eacute; de Trondheim, Norv&egrave;ge. D&eacute;veloppement en langage python d’une interface post-processing d’un logiciel d’hydrodynamique</p>
+		        </div>
+		        <div class="experience-item">
+		            <a href="https://www.corys.com/en/" target="_blank">
+		                <h3>2022 : CORYS</h3>
+		                <img src="CORYS.png" height="88.5" width="212.25" alt="CORYS logo">
+		            </a>
+		            <p>Stage de 1&egrave;re ann&eacute;e d'&eacute;cole d'ing&eacute;nieur de 5 semaines D&eacute;veloppement en langage python d’outils deparam&eacute;trage d’objets de mod&eacute;lisation &eacute;lectrique</p>
+		        </div>
+		        <div class="experience-item">
+		            <a href="https://www.auvieuxcampeur.fr/" target="_blank">
+		                <h3>2016: Au Vieux Campeur</h3>
+		                <img src="AVC.png" height="70" width="140" alt="Au vieux campeur logo">
+		            </a>
+		            <p>Stage d'observation de 3&egrave;me d'une semaine &agrave; Grenoble Approvisionnement de rayon, &eacute;tiquetage et vente de produits</p>
+		        </div>
+		    </div>
+
+            <div class="cursus">
+            	<center>
+            		<h2 style="color: #B22222; font-size: 3rem; font-weight: bold;">&Eacute;l&eacute;ments du Cursus</h2>
+            	</center>
+                <ul>
+                    <h3 style="color:blue;">Outils math&eacute;matiques</h3>
+                    <p>Analyse de donn&eacute;es multidimensionnelles – classification– apprentissage automatique - Algorithmique– M&eacute;thodes num&eacute;riques pour l’optimisation</p>
+                    <h3 style="color:blue;">Informatique-programmation</h3>
+                    <p>Conception d’Interfaces HommeMachine-Programmation Orient&eacute;e Objet-Syst&egrave;mes embarqu&eacute;s-Protocoles r&eacute;seaux-D&eacute;veloppement Java et Android -Applications mobiles-Communications num&eacute;riques - Processeur de signal num&eacute;rique – Syst&egrave;mes embarqu&eacute;s - Communications num&eacute;riques – Mod&eacute;lisation/Performances /Optimisation - R&eacute;seaux de capteurs</p>
+                    <h3 style="color:blue;">Traitement du signal/images</h3>
+                    <p>Traitement num&eacute;rique des signaux-Analyse spectrale – Estimation D&eacute;tection – D&eacute;cision-Traitement d’image avanc&eacute;-Instrumentation – Capteurs – Vision - Observation/cartographie par t&eacute;l&eacute;d&eacute;tection satellitaire/a&eacute;rienne-  Traitements multi-capteurs - Analyse avanc&eacute;e des signaux biologiques & acoustiques - Acoustique sous-marine – Syst&egrave;me sonar - Imagerie sous-marine – Bathym&eacute;trie</p>
+                    <h3 style="color:blue;">Gestion/Management/Communication</h3>
                 </ul>
             </div>
         </div>
-    </nav>
-
-    <div class="cv-container">
-        <?php
-        // Inclusion dynamique des fichiers selon la page demandée
-        if (isset($_GET['page'])){
-            if($_GET['page'] == 'contact'){
-                include("contact.php");
-            }
-            else if($_GET['page'] == 'formations'){
-                include("formations.php");
-            }
-            else if($_GET['page'] == 'confirmation'){
-                include("confirmation.php");
-            }
-            else if($_GET['page'] == 'experiences'){
-                include("experiences.php");
-            }
-            else if($_GET['page'] == 'formationitem1'){
-                include("formations.php#formationitem1");
-            }
-            else if($_GET['page'] == 'formationitem2'){
-                include("formations.php#formationitem2");
-            }
-            else if($_GET['page'] == 'formationitem3'){
-                include("formations.php#formationitem3");
-            }
-            else if($_GET['page'] == 'formationitem4'){
-                include("formations.php#formationitem4");
-            }
-            else if($_GET['page'] == 'formationitem5'){
-                include("formations.php#formationitem5");
-            }
-            else if($_GET['page'] == 'formationitem6'){
-                include("formations.php#formationitem6");
-            }
-            else
-            {
-                include("accueil.php");
-            }
-        } else
-        {
-            include("accueil.php");
-        }
-        ?>
-
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-text">&copy; 2023 BASDEVANT Clément. Tous droits réservés.</p>
-            </div>
-        </div>
+    <footer>
+        <p>Copyright &copy; 2023 BASDEVANT Cl&eacute;ment. Tous droits r&eacute;serv&eacute;s.</p>
     </footer>
-
-
 </body>
 
 </html>
