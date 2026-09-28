@@ -212,6 +212,21 @@
   .clip-text { display: grid; gap: 12px; }
   .clip-text h3 { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.15; letter-spacing: -.01em; }
   .clip-text blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--forecast); font-size: 18px; font-style: italic; }
+  .asparun { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; align-items: start; }
+  .asparun-text { display: grid; gap: 14px; }
+  .asparun-text h3 { font-size: clamp(24px, 3vw, 30px); letter-spacing: -.01em; }
+  .asparun-text > p { color: var(--muted); max-width: 60ch; }
+  .results { display: grid; gap: 8px; }
+  .result { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .result b { font-family: var(--display); font-size: 34px; font-weight: 800; line-height: 1; color: var(--forecast); min-width: 56px; }
+  .result div { display: grid; gap: 2px; }
+  .result strong { font-size: 17px; }
+  .result span { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .asparun-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 190px 190px; gap: 8px; }
+  .asparun-photos figure { margin: 0; position: relative; border-radius: 10px; overflow: hidden; }
+  .asparun-photos .tall { grid-row: span 2; }
+  .asparun-photos img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .asparun-photos figcaption { position: absolute; left: 6px; bottom: 6px; font-family: var(--mono); font-size: 10px; padding: 2px 6px; border-radius: 5px; background: rgba(14, 22, 27, .72); color: #fff; }
   .camp { margin-top: 48px; display: grid; gap: 14px; }
   .camp-head { display: flex; align-items: center; gap: 14px; }
   .camp-head .co-logo { width: 64px; height: 64px; flex: none; }
@@ -434,7 +449,8 @@
     .profile, .edu, .win, .clip { grid-template-columns: 1fr; }
     .pbs { grid-template-columns: repeat(2, 1fr); }
     .award { grid-template-columns: 180px 1fr; }
-    .alumni, .teaser-grid, .pilot, .pilot.clubs, .castore { grid-template-columns: 1fr; }
+    .alumni, .teaser-grid, .pilot, .pilot.clubs, .castore, .asparun { grid-template-columns: 1fr; }
+    .asparun-photos { grid-template-rows: 150px 150px; }
     .castore-logo { max-width: 240px; }
     .award .post { grid-column: 1 / -1; }
   }
@@ -965,6 +981,34 @@
       </div>
     </article>
 
+    <article class="asparun">
+      <div class="asparun-text">
+        <span class="label">8 mars 2026 · Meylan · à domicile</span>
+        <h3>Asparun 2026 : doublé</h3>
+        <p>Pour la 15<sup>e</sup> édition de l'Asparun, course solidaire au profit des enfants en situation de handicap, j'ai gagné les deux courses de la matinée, sur un circuit de routes et de sentiers à travers Meylan.</p>
+        <div class="results">
+          <div class="result">
+            <b>1<sup>er</sup></b>
+            <div><strong>5 km</strong><span>16'02 · 486 classés · 10 s devant le 2<sup>e</sup></span></div>
+          </div>
+          <div class="result">
+            <b>1<sup>er</sup></b>
+            <div><strong>Relais duo 10 km</strong><span>34'18 avec Hugo Chauvet · 36 équipes · près de 2 min d'avance</span></div>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://www.athle.fr/bases/liste.aspx?frmbase=resultats&amp;frmmode=1&amp;frmespace=0&amp;frmcompetition=313193&amp;frmepreuve=Course+5+Km+%2f+TCX" target="_blank" rel="noopener">Résultats FFA du 5 km</a>
+          <a href="https://www.athle.fr/bases/liste.aspx?frmbase=resultats&amp;frmmode=1&amp;frmespace=0&amp;frmcompetition=313193&amp;frmepreuve=Relais+%2f+TCX" target="_blank" rel="noopener">Résultats du relais</a>
+          <a href="https://asparun.com/" target="_blank" rel="noopener">Le site de l'Asparun</a>
+        </div>
+      </div>
+      <div class="asparun-photos">
+        <figure class="tall"><img src="img/asparun-36.webp" alt="Clément en course sur un chemin du parc, dossard 494-1" loading="lazy"><figcaption>© Philippe Durbet · Metro Sports</figcaption></figure>
+        <figure><img src="img/asparun-34.webp" alt="Podium du 5 km : Clément sur la plus haute marche, le Saint-Eynard en arrière-plan" loading="lazy"><figcaption>Podium 5 km</figcaption></figure>
+        <figure><img src="img/asparun-35.webp" alt="Clément et Hugo Chauvet brandissent leurs trophées du relais duo" loading="lazy"><figcaption>Relais duo avec Hugo Chauvet</figcaption></figure>
+      </div>
+    </article>
+
     <article class="camp">
       <div class="camp-head">
         <span class="co-logo" style="padding:0"><img src="img/logo-illegiteam.jpg" alt="Logo Illegiteam"></span>
@@ -1012,7 +1056,8 @@
           <tr><td>17 mai</td><td>Longueur</td><td class="perf">5,29 m</td></tr>
           <tr><td>2 mai</td><td>4 × 400 m</td><td class="perf">3'26"29</td></tr>
           <tr><td>2 mai</td><td>400 m</td><td class="perf">51"89</td></tr>
-          <tr><td>8 mars</td><td>5 km</td><td class="perf">16'02</td></tr>
+          <tr class="hl"><td>8 mars</td><td>Relais duo 10 km, Asparun <span class="note">· 1<sup>er</sup></span></td><td class="perf">34'18</td></tr>
+          <tr class="hl"><td>8 mars</td><td>5 km, Asparun <span class="note">· 1<sup>er</sup></span></td><td class="perf">16'02</td></tr>
           <tr><td>15 févr.</td><td>Cross, course courte</td><td class="perf">14'50</td></tr>
           <tr><td>25 janv.</td><td>Cross, course courte</td><td class="perf">14'13</td></tr>
         </tbody>
