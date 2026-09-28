@@ -1,232 +1,1240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-    <meta charset="utf-8">
-    <title>CV de BASDEVANT Clément</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="path/to/fontawesome/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="styleV3.css">
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Clément Basdevant">
+<meta property="og:description" content="Ingénieur logiciel Python &amp; Data et moniteur de ski nordique à Grenoble.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230F6E6E%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2728%27 fill=%27white%27 text-anchor=%27middle%27%3ECB%3C/text%3E%3C/svg%3E">
+<title>Clément Basdevant</title>
+<meta name="description" content="Clément Basdevant, ingénieur logiciel Python & Data à Grenoble.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #EEF2F1;
+    --surface: #FFFFFF;
+    --ink: #16242E;
+    --muted: #55656E;
+    --line: #D3DCDC;
+    --measure: #0F6E6E;
+    --forecast: #C27C00;
+    --band: rgba(194, 124, 0, .14);
+    --grid: rgba(22, 36, 46, .08);
+    --chip: #E2EAE9;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground: #0E161B;
+      --surface: #152028;
+      --ink: #E4ECEE;
+      --muted: #93A4AB;
+      --line: #25343D;
+      --measure: #4CC2B8;
+      --forecast: #F2B33D;
+      --band: rgba(242, 179, 61, .16);
+      --grid: rgba(228, 236, 238, .07);
+      --chip: #1C2A33;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground: #0E161B;
+    --surface: #152028;
+    --ink: #E4ECEE;
+    --muted: #93A4AB;
+    --line: #25343D;
+    --measure: #4CC2B8;
+    --forecast: #F2B33D;
+    --band: rgba(242, 179, 61, .16);
+    --grid: rgba(228, 236, 238, .07);
+    --chip: #1C2A33;
+  }
 
+  * { box-sizing: border-box; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    padding-inline: 20px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 1040px; margin-inline: auto; }
+  a { color: inherit; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--measure); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  .label {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Top bar */
+  .top {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding-block: 22px; flex-wrap: wrap;
+  }
+  .top .mark { font-family: var(--display); font-size: 17px; font-weight: 700; text-decoration: none; letter-spacing: -.01em; }
+  .top nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
+  .top nav a { text-decoration: none; color: var(--muted); }
+  .top nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding-block: 48px 8px; display: grid; gap: 28px; }
+  .status {
+    display: inline-flex; align-items: center; gap: 10px; width: fit-content;
+    font-family: var(--mono); font-size: 13px;
+    padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+  }
+  .status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--measure); box-shadow: 0 0 0 0 var(--measure); animation: ping 2.4s infinite; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--measure) 60%, transparent); } 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+  .hero h1 {
+    font-size: clamp(52px, 11vw, 132px);
+    font-weight: 800;
+    line-height: .88;
+    letter-spacing: -.035em;
+  }
+  .hero h1 span { display: block; color: var(--measure); }
+  .hero .role { font-size: clamp(19px, 2.4vw, 24px); max-width: 38ch; font-weight: 500; }
+  .hero .role em { font-style: normal; color: var(--muted); }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+
+  /* Sections */
+  section { padding-block: 72px 0; }
+  .sec-head { display: grid; gap: 6px; margin-bottom: 32px; }
+  .sec-head h2 { font-size: clamp(30px, 4.4vw, 44px); font-weight: 700; letter-spacing: -.02em; }
+
+  .profile { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+  .profile p.lead { font-size: 20px; line-height: 1.55; max-width: 34ch; }
+  .facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .facts div { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+  .facts dt { color: var(--muted); font-size: 14px; }
+  .facts dd { margin: 0; text-align: right; font-weight: 500; }
+
+  /* Timeline */
+  .timeline { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .job { display: grid; grid-template-columns: 150px 1fr; gap: 28px; padding-block: 30px; border-bottom: 1px solid var(--line); }
+  .job .when { font-family: var(--mono); font-size: 14px; color: var(--measure); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .job .when { display: grid; gap: 12px; align-content: start; }
+  .co-logo { display: block; width: 130px; height: 72px; padding: 8px 12px; border-radius: 10px; background: #fff; border: 1px solid var(--line); overflow: hidden; }
+  .co-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .job h3 { font-size: 24px; font-weight: 700; letter-spacing: -.01em; }
+  .job .where { color: var(--muted); margin-top: 2px; }
+  .job .body { display: grid; gap: 14px; max-width: 66ch; }
+  .job ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+  .job li::marker { color: var(--forecast); }
+  .stack { display: flex; flex-wrap: wrap; gap: 6px; }
+  .stack span { font-family: var(--mono); font-size: 12px; padding: 3px 9px; border-radius: 6px; background: var(--chip); }
+
+  /* Skills */
+  .core { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px 24px; padding: 18px 22px; margin-bottom: 14px; border-radius: 14px; background: var(--ink); color: var(--ground); }
+  .core-lang { font-family: var(--display); font-size: clamp(30px, 4vw, 42px); font-weight: 800; letter-spacing: -.02em; }
+  .core p { opacity: .82; max-width: 52ch; font-size: 15px; }
+  .core .stack span { background: color-mix(in srgb, var(--ground) 16%, transparent); color: var(--ground); }
+  .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .skill { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 10px; align-content: start; }
+  .skill-n { font-family: var(--display); font-size: 20px; font-weight: 700; color: var(--measure); }
+  .skill p { color: var(--muted); font-size: 15px; }
+  .skill small { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+  .radio { margin-top: 16px; display: flex; align-items: center; gap: 18px; padding: 18px 20px; border-radius: 12px; border: 1px solid var(--line); border-left: 4px solid var(--forecast); background: var(--surface); }
+  .radio-icon { width: 52px; height: 52px; flex: none; color: var(--forecast); }
+  .radio div { display: grid; gap: 4px; }
+  .radio strong { font-family: var(--display); font-size: 20px; }
+  .radio p { color: var(--muted); max-width: 70ch; font-size: 15px; }
+  .skill ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+
+  /* Education + side */
+  .edu { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  .school { display: grid; gap: 6px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+  .school:first-child { border-top: 1px solid var(--line); }
+  .school .row { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+  .school h3 { font-size: 20px; font-weight: 700; }
+  .school .yr { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .school p { color: var(--muted); max-width: 60ch; }
+  .school-logo { display: block; width: fit-content; padding: 8px 12px; border-radius: 10px; background: #fff; border: 1px solid var(--line); margin-bottom: 4px; }
+  .school-logo img { display: block; height: 40px; width: auto; }
+  .award { margin-top: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; grid-template-columns: 220px 1fr 1fr; gap: 24px; align-items: center; }
+  .award-text { display: grid; gap: 8px; }
+  .award h3 { font-size: 26px; }
+  .award-photo { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+  .edu .school:last-child { border-bottom: 0; }
+  .award .yr { font-family: var(--mono); font-size: 13px; color: var(--forecast); }
+  .side { display: grid; gap: 28px; }
+  .langs { display: grid; gap: 10px; }
+  .lang { display: grid; grid-template-columns: 90px 1fr auto; gap: 12px; align-items: center; font-size: 15px; }
+  .bar { height: 6px; border-radius: 3px; background: var(--chip); overflow: hidden; }
+  .bar b { display: block; height: 100%; background: var(--measure); border-radius: 3px; }
+  .lang small { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .certs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .certs span { font-size: 13px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); }
+
+  /* Outside */
+  .outside { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .act { padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 8px; align-content: start; }
+  .act h3 { font-size: 20px; }
+  .act p { color: var(--muted); font-size: 15px; }
+  .act .alt { font-family: var(--mono); font-size: 12px; color: var(--forecast); }
+
+  /* Sport */
+  .win { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: stretch; }
+  .win-text { display: grid; gap: 18px; align-content: start; }
+  .place { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .place b { font-family: var(--display); font-size: clamp(64px, 10vw, 104px); font-weight: 800; line-height: .9; color: var(--forecast); letter-spacing: -.04em; }
+  .place span { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+  .win-text h3 { font-size: clamp(24px, 3vw, 30px); letter-spacing: -.01em; }
+  .splits { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .splits div { padding: 12px 0; display: grid; gap: 2px; }
+  .splits div + div { padding-left: 14px; border-left: 1px solid var(--line); }
+  .splits strong { font-family: var(--mono); font-size: 20px; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .icare-video { margin: 10px 0 0; display: grid; gap: 8px; }
+  .icare-video video { display: block; width: 100%; max-width: 560px; aspect-ratio: 16 / 9; border-radius: 12px; background: #000; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; }
+  .links a { color: var(--measure); font-weight: 500; }
+  .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .photos figure { margin: 0; border-radius: 12px; overflow: hidden; background: var(--chip); position: relative; }
+  .photos img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 2 / 3; }
+  .photos figcaption { position: absolute; left: 8px; bottom: 8px; font-family: var(--mono); font-size: 11px; padding: 3px 8px; border-radius: 6px; background: rgba(14, 22, 27, .72); color: #fff; }
+  .clip { margin-top: 36px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .clip-img { display: block; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 24px rgba(22, 36, 46, .14); transform: rotate(-1deg); transition: transform .2s; }
+  .clip-img:hover { transform: rotate(0deg) scale(1.01); }
+  .clip-img img { display: block; width: 100%; }
+  .clip-text { display: grid; gap: 12px; }
+  .clip-text h3 { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.15; letter-spacing: -.01em; }
+  .clip-text blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--forecast); font-size: 18px; font-style: italic; }
+  .camp { margin-top: 48px; display: grid; gap: 14px; }
+  .camp-head { display: flex; align-items: center; gap: 14px; }
+  .camp-head .co-logo { width: 64px; height: 64px; flex: none; }
+  .camp-head .co-logo img { border-radius: 8px; }
+  .camp-head h3 { font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -.01em; }
+  .camp > p:not(.credits) { max-width: 66ch; color: var(--muted); }
+  .camp-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 180px; gap: 8px; }
+  .camp-grid img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+  .camp-grid .tall { grid-row: span 2; object-position: 50% 20%; }
+  .also { margin-top: 56px; display: flex; align-items: center; gap: 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  .also-icon { width: 48px; height: 48px; flex: none; color: var(--measure); }
+  .also div { display: grid; gap: 2px; }
+  .also strong { font-family: var(--display); font-size: 20px; }
+  .also p { color: var(--muted); font-size: 15px; }
+  .records { margin-top: 56px; }
+  .pb small { font-size: 12px; color: var(--muted); }
+  .pbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .pb { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 4px; }
+  .pb .ev { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .pb strong { font-family: var(--mono); font-size: 19px; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .season { margin-top: 28px; overflow-x: auto; }
+  .season table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+  .season th { text-align: left; font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  .season td { padding: 8px 10px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  .season td.perf { font-family: var(--mono); text-align: right; }
+  .season th.perf { text-align: right; }
+  .season tr.hl td { background: color-mix(in srgb, var(--forecast) 10%, transparent); }
+  .season tr.hl td.perf { color: var(--forecast); font-weight: 500; }
+  .season .note { color: var(--muted); font-size: 13px; }
+  details.season summary { cursor: pointer; font-family: var(--mono); font-size: 13px; color: var(--measure); padding-block: 6px; }
+
+  /* Icare */
+  .icare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .icare figure { margin: 0; border-radius: 10px; overflow: hidden; background: var(--chip); position: relative; height: 190px; }
+  .icare img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .icare figcaption { position: absolute; left: 8px; bottom: 8px; font-family: var(--mono); font-size: 11px; padding: 3px 8px; border-radius: 6px; background: rgba(14, 22, 27, .72); color: #fff; }
+  .icare-text { display: grid; grid-template-columns: auto 1fr; gap: 28px; margin-top: 24px; align-items: start; }
+  .icare-text .place b { color: var(--measure); }
+  .icare-text .body { display: grid; gap: 12px; max-width: 62ch; }
+  .credits { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .pilot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+  .pilot-card { display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: center; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-decoration: none; color: var(--ink); transition: border-color .15s; }
+  a.pilot-card:hover { border-color: var(--measure); }
+  .pilot-card .co-logo { width: 72px; height: 72px; padding: 8px; }
+  .pilot-card .co-logo.syride { display: grid; place-items: center; font: 700 13px var(--display); color: #1F2A44; }
+  .pilot.clubs { grid-template-columns: repeat(2, 1fr); }
+  .pilot-card .co-logo.caprg { display: grid; place-items: center; background: #D42027; border-color: #D42027; color: #fff; font: 800 14px var(--display); letter-spacing: .02em; }
+  .pilot-card .co-logo img { border-radius: 8px; }
+  .pilot-card div { display: grid; gap: 2px; }
+  .pilot-card strong { font-family: var(--display); font-size: 18px; }
+  .pilot-card div span:last-child { font-size: 14px; color: var(--muted); }
+  .club-line { color: var(--muted); max-width: 60ch; }
+  .club-line a { color: var(--measure); font-weight: 500; }
+  .volunteer { display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; align-items: center; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .volunteer figure { margin: 0; border-radius: 12px; overflow: hidden; }
+  .volunteer img { display: block; width: 100%; max-height: 260px; aspect-ratio: 16 / 10; object-fit: cover; }
+  .volunteer .body { display: grid; gap: 12px; max-width: 58ch; }
+  .volunteer h3 { font-size: 24px; }
+  .volunteer ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+  .volunteer li::marker { color: var(--measure); }
+  .post { display: grid; gap: 12px; padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-decoration: none; color: var(--ink); transition: border-color .15s; }
+  .post:hover { border-color: var(--measure); }
+  .post-head { display: flex; align-items: center; gap: 12px; }
+  .post-head div { display: grid; line-height: 1.3; }
+  .post-head small { font-size: 13px; color: var(--muted); }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--measure); color: var(--ground); font: 500 14px var(--mono); flex: none; }
+  .post-quote { font-style: italic; padding-left: 12px; border-left: 3px solid var(--forecast); }
+  .post-cta { font-size: 14px; font-weight: 500; color: var(--measure); }
+  /* LinkedIn look */
+  .post { --li: #0A66C2; border-top: 3px solid var(--li); box-shadow: 0 2px 10px rgba(22, 36, 46, .06); }
+  .post:hover { border-color: var(--li); }
+  .post-head::after {
+    content: ""; margin-left: auto; width: 24px; height: 24px; flex: none; border-radius: 4px;
+    background: #0A66C2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M6.5 8.8H3.7V20h2.8zM5.1 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zM20.3 13.4c0-3-.7-4.9-3.9-4.9-1.6 0-2.6.8-3 1.6V8.8h-2.7V20h2.8v-5.5c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h2.9z'/%3E%3C/svg%3E") center / 18px no-repeat;
+  }
+  .post-head div { flex: 1; min-width: 0; }
+  .post-head small::before { content: "LinkedIn · "; font-weight: 600; color: var(--li); }
+  .post .post-cta { display: flex; align-items: center; gap: 8px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--li); }
+  :root[data-theme="dark"] .post { --li: #70B5F9; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .post { --li: #70B5F9; } }
+
+  /* Hero tracks */
+  .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+  .track { display: grid; gap: 6px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); text-decoration: none; color: var(--ink); transition: border-color .15s, transform .15s; }
+  .track:hover { border-color: var(--measure); transform: translateY(-2px); }
+  .track strong { font-family: var(--display); font-size: 22px; font-weight: 700; letter-spacing: -.01em; }
+  .track span:last-child { color: var(--muted); font-size: 15px; }
+  .track.ski .label { color: var(--forecast); }
+
+  /* Parts */
+  .part { margin-top: 96px; padding-block: 14px; border-top: 3px solid var(--ink); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .part h2 { font-size: clamp(40px, 7vw, 76px); font-weight: 800; letter-spacing: -.035em; line-height: 1; }
+  .part p { color: var(--muted); max-width: 44ch; }
+  .track-head { padding-block: 48px 0; display: grid; gap: 8px; }
+  .track-head h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -.03em; line-height: 1.02; }
+  .track-head h2 span { color: var(--measure); }
+  .track-head.ski h2 span { color: var(--forecast); }
+  .track-head p { color: var(--muted); max-width: 60ch; font-size: 17px; }
+  .track-head + section { padding-top: 40px; }
+
+  /* Ski */
+  .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .role-card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 12px; align-content: start; }
+  .role-card .where { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .role-card h3 { font-size: 24px; letter-spacing: -.01em; }
+  .role-card ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+  .role-card li::marker { color: var(--forecast); }
+  .role-card.training { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; text-decoration: none; color: var(--ink); transition: border-color .15s; }
+  .role-card.training:hover { border-color: var(--forecast); }
+  .role-card.training > div { display: grid; gap: 4px; }
+  .co-logo.cnsnmm { width: 150px; height: 72px; flex: none; }
+  .role-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .role-top .co-logo { width: 96px; height: 80px; }
+  .role-card .since { font-family: var(--mono); font-size: 13px; color: var(--forecast); font-weight: 500; }
+  .ski-extra { display: grid; grid-template-columns: 1fr 1.2fr; gap: 16px; margin-top: 16px; align-items: start; }
+  .ski-facts { display: grid; border-top: 1px solid var(--line); }
+  .ski-facts div { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+  .ski-facts dt { color: var(--muted); font-size: 14px; }
+  .ski-facts dd { margin: 0; text-align: right; font-weight: 500; }
+  .post-text { display: grid; gap: 8px; }
+  .ski-photos { display: grid; grid-template-columns: 1fr 1.6fr; gap: 10px; margin-bottom: 16px; }
+  .ski-photos figure { margin: 0; border-radius: 12px; overflow: hidden; background: var(--chip); position: relative; }
+  .ski-photos img { display: block; width: 100%; height: 100%; max-height: 420px; object-fit: cover; }
+  .ski-photos figcaption { position: absolute; left: 8px; bottom: 8px; font-family: var(--mono); font-size: 11px; padding: 3px 8px; border-radius: 6px; background: rgba(14, 22, 27, .72); color: #fff; }
+
+  /* Pollutec */
+  .event { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; }
+  .event-text { display: grid; gap: 14px; max-width: 62ch; }
+  .castore { display: grid; grid-template-columns: 260px 1fr; gap: 28px; align-items: start; }
+  .castore-logo { display: block; width: 100%; padding: 14px; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .castore-text { display: grid; gap: 14px; max-width: 66ch; }
+  .castore-text ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+  .castore-text li::marker { color: var(--measure); }
+  .axes { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+  .axes div { display: grid; gap: 4px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .axes strong { font-family: var(--display); font-size: 16px; color: var(--measure); }
+  .axes span { font-size: 14px; color: var(--muted); }
+  .visits { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .alumni { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: start; }
+  .alumni-photo { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; }
+  .alumni-text { display: grid; gap: 14px; max-width: 64ch; }
+  .alumni-text ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+  .alumni-text li::marker { color: var(--measure); }
+  .missions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .missions div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 4px; }
+  .missions strong { font-size: 15px; }
+  .missions p { font-size: 14px; color: var(--muted); }
+  .ceremony { margin-top: 24px; display: grid; gap: 10px; }
+  .ceremony-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .ceremony-strip img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+  .visits-wrap { padding-top: 48px; display: grid; gap: 12px; }
+  .visits { gap: 10px; }
+  .visit { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px; display: grid; grid-template-columns: 84px 1fr; gap: 14px; align-items: center; }
+  .visit img { display: block; width: 84px; height: 84px; object-fit: cover; border-radius: 8px; }
+  .visit strong { font-family: var(--display); font-size: 18px; }
+  .visit .when-sm { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .visit p { font-size: 14px; color: var(--muted); margin-top: 2px; }
+  .event-photo { margin: 6px 0 0; display: grid; gap: 6px; }
+  .event-photo img { display: block; width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; object-position: center 35%; border-radius: 12px; }
+  .event-photo figcaption { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .sec-head.with-logo { display: flex; align-items: center; gap: 18px; }
+  .sec-head.with-logo > div { display: grid; gap: 6px; }
+  .logo { width: 76px; height: 76px; flex: none; object-fit: contain; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
+  .avatar-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: #fff; border: 1px solid var(--line); flex: none; }
+
+  /* Tabs & pages */
+  .tracks { margin-top: 48px; }
+  .sport-tabs { margin-top: 24px; }
+  .photo-track { grid-template-columns: 88px 1fr; align-items: center; gap: 16px; padding: 12px; }
+  .photo-track img { width: 88px; height: 88px; object-fit: cover; border-radius: 10px; }
+  .photo-track div { display: grid; gap: 4px; }
+  .photo-track div span:last-child { color: var(--muted); font-size: 15px; }
+  .track:not([aria-current="page"]) { opacity: .72; }
+  .track:not([aria-current="page"]):hover { opacity: 1; }
+  .track[aria-current="page"] { border-color: var(--measure); box-shadow: inset 0 0 0 1px var(--measure); }
+  .track.ski[aria-current="page"] { border-color: var(--forecast); box-shadow: inset 0 0 0 1px var(--forecast); }
+  .sub-head { padding-block: 40px 8px; display: grid; gap: 14px; }
+  .sub-head h1 { font-size: clamp(44px, 8vw, 88px); font-weight: 800; letter-spacing: -.035em; line-height: .95; }
+  .back { font-family: var(--mono); font-size: 13px; color: var(--muted); text-decoration: none; width: fit-content; }
+  .back:hover { color: var(--ink); }
+  .tabbar { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-top: 16px; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--ground); overflow-x: auto; }
+  .tabbar a { padding: 12px 18px; text-decoration: none; color: var(--muted); font-weight: 500; border-bottom: 3px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+  .tabbar a:hover { color: var(--ink); }
+  .tabbar a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--measure); }
+  .top nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+  .teasers { padding-top: 88px; }
+  .teasers-head { display: grid; gap: 4px; margin-bottom: 16px; }
+  .teasers-head h2 { font-size: 26px; font-weight: 700; letter-spacing: -.01em; }
+  .teaser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .teaser { display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: center; padding: 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-decoration: none; color: var(--ink); transition: border-color .15s; }
+  .teaser:hover { border-color: var(--measure); }
+  .teaser img { width: 96px; height: 96px; object-fit: cover; border-radius: 8px; }
+  .teaser div { display: grid; gap: 2px; }
+  .teaser strong { font-family: var(--display); font-size: 18px; }
+  .teaser span:last-child { font-size: 14px; color: var(--muted); }
+  [data-page="perso"] section:first-of-type { padding-top: 40px; }
+
+  /* Contact */
+  .contact { margin-top: 88px; background: var(--ink); color: var(--ground); border-radius: 18px; padding: clamp(28px, 5vw, 56px); display: grid; gap: 22px; }
+  .contact h2 { font-size: clamp(34px, 5.5vw, 60px); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+  .contact p { max-width: 50ch; opacity: .8; }
+  .channels { margin: 0; display: grid; border-top: 1px solid color-mix(in srgb, var(--ground) 18%, transparent); }
+  .ch { display: grid; grid-template-columns: 130px 1fr auto; gap: 16px; align-items: center; padding-block: 14px; border-bottom: 1px solid color-mix(in srgb, var(--ground) 18%, transparent); }
+  .ch dt { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .ch dd { margin: 0; min-width: 0; }
+  .ch code { font-family: var(--mono); font-size: clamp(15px, 2.2vw, 19px); user-select: all; overflow-wrap: anywhere; }
+  .ch button, .ch .btn { display: inline-block; font: 500 14px var(--body); padding: 9px 16px; border-radius: 10px; border: 0; background: var(--measure); color: #fff; cursor: pointer; text-decoration: none; white-space: nowrap; }
+  :root[data-theme="dark"] .ch button, :root[data-theme="dark"] .ch .btn { color: #0E161B; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ch button, :root:not([data-theme="light"]) .ch .btn { color: #0E161B; } }
+  .ch button:hover, .ch .btn:hover { filter: brightness(1.08); }
+  @media (max-width: 560px) {
+    .ch { grid-template-columns: 1fr auto; gap: 6px 12px; }
+    .ch dt { grid-column: 1 / -1; }
+  }
+  footer { margin-top: 28px; font-family: var(--mono); font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 860px) {
+    .skills { grid-template-columns: 1fr; }
+    .core { grid-template-columns: 1fr; }
+    .profile, .edu, .win, .clip { grid-template-columns: 1fr; }
+    .pbs { grid-template-columns: repeat(2, 1fr); }
+    .award { grid-template-columns: 180px 1fr; }
+    .alumni, .teaser-grid, .pilot, .pilot.clubs, .castore { grid-template-columns: 1fr; }
+    .castore-logo { max-width: 240px; }
+    .award .post { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    body { padding-inline: 16px; }
+    .job { grid-template-columns: 1fr; gap: 10px; }
+    .job .when { display: flex; align-items: center; justify-content: space-between; }
+    .co-logo { width: 110px; height: 48px; }
+    .skills, .outside { grid-template-columns: 1fr; }
+    .top nav { gap: 14px; }
+    .pbs { grid-template-columns: repeat(2, 1fr); }
+    .icare { grid-template-columns: repeat(3, 1fr); }
+    .icare figure { height: 110px; }
+    .icare-text { grid-template-columns: 1fr; gap: 12px; }
+    .roles, .ski-extra, .event, .teaser-grid, .ski-photos, .volunteer, .award, .visits, .alumni, .missions { grid-template-columns: 1fr; }
+    .ceremony-strip { grid-template-columns: repeat(2, 1fr); }
+    .camp-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; }
+    .award-photo { max-width: 260px; }
+    .tracks { gap: 8px; }
+    .track { padding: 12px 14px; }
+    .track strong { font-size: 17px; }
+    .track span:not(.label):last-child { display: none; }
+    .photo-track { grid-template-columns: 1fr; padding: 10px; }
+    .photo-track img { width: 100%; height: 72px; }
+    .part { margin-top: 72px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .status .dot { animation: none; }
+  }
+</style>
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; }
+  img, video { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+</head>
 <body>
-     <!-- Image par-dessus la barre de menu -->
-    <a href="CVEnAnglais.html" class="photo">
-        <img src="images/angl.png" height="27" width="45">
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#ingenieur">Clément Basdevant</a>
+    <nav aria-label="Sections">
+      <a href="#ingenieur" data-nav="pro">Pro</a>
+      <a href="#association" data-nav="asso">Association</a>
+      <a href="#course" data-nav="perso">Sport &amp; loisirs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main data-page="pro">
+  <div class="hero">
+    <div class="status"><span class="dot"></span>Ouvert aux opportunités · ingénieur logiciel &amp; data</div>
+    <h1>Clément<span>Basdevant</span></h1>
+    <p class="role">Ingénieur logiciel Python &amp; Data, et moniteur de ski nordique en Chartreuse.</p>
+    <div class="meta">
+      <span>Grenoble, France</span>
+      <span>25 ans</span>
+      <span>Ingénieur SeaTech (Grenoble INP)</span>
+    </div>
+  </div>
+
+  <nav class="tracks" aria-label="Activités professionnelles">
+    <a class="track" href="#ingenieur" data-tablink="ingenieur">
+      <span class="label">Métier principal</span>
+      <strong>Ingénieur logiciel &amp; data</strong>
+      <span>Python, interfaces web, IA appliquée à l'énergie</span>
+    </a>
+    <a class="track ski" href="#ski" data-tablink="ski">
+      <span class="label">Auto-entrepreneur · Chartreuse</span>
+      <strong>Moniteur de ski nordique</strong>
+      <span>Ski de fond et biathlon à l'École de Porte, coach au Ski Nordique Chartreuse</span>
+    </a>
+  </nav>
+
+  <div data-tab="ingenieur">
+  <header class="track-head">
+    <span class="label">Métier principal · G2Elab, Grenoble</span>
+    <h2>Ingénieur logiciel <span>&amp; data</span></h2>
+  </header>
+
+  <section id="profil">
+    <div class="profile">
+      <div class="sec-head" style="margin:0">
+        <span class="label">Profil</span>
+        <p class="lead">Ingénieur logiciel spécialisé en développement Python et en data. J'ai travaillé sur des interfaces, du traitement de données et de l'intelligence artificielle, du capteur jusqu'à l'écran de l'utilisateur.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Poste recherché</dt><dd>Ingénieur logiciel / data</dd></div>
+        <div><dt>Disponibilité</dt><dd>Novembre 2026</dd></div>
+        <div><dt>Basé à</dt><dd>Grenoble</dd></div>
+        <div><dt>Anglais</dt><dd>B2/C1 · TOEIC 880</dd></div>
+        <div><dt>Mobilité</dt><dd>Permis B, véhiculé</dd></div>
+        <div><dt>En parallèle</dt><dd><a href="#ski">Moniteur de ski nordique</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="castore">
+    <div class="sec-head">
+      <span class="label">Projet de start-up · G2Elab · 2026</span>
+      <h2>CaStore, co-porteur du projet</h2>
+    </div>
+    <div class="castore">
+      <img class="castore-logo" src="img/logo-castore.webp" alt="Logo CaStore, stockage de données de capteurs">
+      <div class="castore-text">
+        <p>CaStore est une plateforme souveraine de collecte, de structuration et d'analyse prédictive des données énergétiques : électricité, gaz et eau. Je porte le projet avec Thomas Calmant ; j'y suis responsable de l'analyse de données, de la prédiction et de l'expérience utilisateur.</p>
+        <p><strong>Le constat.</strong> Le réseau électrique est de plus en plus sous tension, et l'électrification des usages va l'accentuer. Une communauté énergétique qui installe des panneaux solaires doit prévoir finement sa consommation et sa production pour maximiser l'autoconsommation. Un bailleur social cherche plutôt à repérer les anomalies : un appareil qui surconsomme, une fuite d'eau. Tous se heurtent aux mêmes limites : dépendance à un prestataire unique, données peu interopérables, remontée mal automatisée.</p>
+        <p><strong>La réponse.</strong> CaStore agrège des données de sources très variées (compteurs, capteurs de confort, météo, production solaire, batteries) dans une structure commune, quel que soit le type de capteur. Une couche d'analyse transforme ensuite ces données brutes en services concrets :</p>
+        <div class="axes">
+          <div><strong>Visibilité</strong><span>Consommation et production dans une interface co-construite avec les utilisateurs.</span></div>
+          <div><strong>Prévisibilité</strong><span>Prévisions de consommation et de production pour l'aide à la décision.</span></div>
+          <div><strong>Sobriété</strong><span>Comprendre et réduire sa consommation, détecter les dérives et les anomalies.</span></div>
+          <div><strong>Flexibilité</strong><span>Décaler les usages et piloter les équipements pour soulager le réseau.</span></div>
+          <div><strong>Souveraineté</strong><span>Données hébergées en France ; chaque propriétaire contrôle l'accès et l'usage de ses données.</span></div>
+        </div>
+        <p>La plateforme est pensée dès l'origine pour le RGPD, le Data Act, l'AI Act et NIS2. Elle vise les communautés énergétiques, les bailleurs sociaux et les fournisseurs d'énergie, et doit supporter plus de 100 000 capteurs.</p>
+        <div class="stack"><span>Python</span><span>PyTorch</span><span>TimescaleDB</span><span>Kafka</span><span>API REST</span><span>UI/UX</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head">
+      <span class="label">Parcours professionnel</span>
+      <h2>Expérience</h2>
+    </div>
+    <div class="timeline">
+      <article class="job">
+        <div class="when">2025 – 2026<span class="co-logo"><img src="img/logo-g2elab.png" alt="Logo G2Elab"></span></div>
+        <div class="body">
+          <div>
+            <h3>Ingénieur d'études</h3>
+            <div class="where">G2Elab, Grenoble · projet start-up xKy</div>
+          </div>
+          <p>Le xKy est un capteur développé par Jérôme Ferrari qui remonte en temps réel les informations du compteur Linky. L'objectif : tenir la montée en charge du nombre d'utilisateurs et de capteurs, et créer des outils pour les usagers comme pour les chercheurs.</p>
+          <ul>
+            <li>Développement d'une interface web en Quasar / Vue.js, déployée avec Docker.</li>
+            <li>Conception d'outils d'analyse, de visualisation, d'optimisation et d'aide à la décision à partir des données énergétiques.</li>
+            <li>Modèles de prévision de consommation électrique basés sur N-BEATS.</li>
+            <li>Contribution à la création de la start-up : études de marché, réflexion produit, stratégie de commercialisation, développement commercial.</li>
+            <li>Travail en équipe Agile de 4 personnes (Git, stand-up).</li>
+          </ul>
+          <div class="stack"><span>Python</span><span>Vue.js</span><span>Quasar</span><span>Docker</span><span>Git</span><span>N-BEATS</span></div>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">2024<span class="co-logo"><img src="img/logo-trixell.png" alt="Logo Trixell"></span></div>
+        <div class="body">
+          <div>
+            <h3>Stage de fin d'études · Ingénieur développement logiciel de test</h3>
+            <div class="where">Trixell, Moirans · mars – août 2024 (22 semaines)</div>
+          </div>
+          <p>Trixell conçoit des détecteurs numériques à rayons X pour l'imagerie médicale. J'étais dans l'équipe Test du groupe Logiciel et Image.</p>
+          <ul>
+            <li>Amélioration et développement d'outils Python pour communiquer avec les détecteurs via le protocole DDS (Data Distribution Service), avec CycloneDDS.</li>
+            <li>Conception d'une interface homme-machine (IHM) pour explorer les échanges DDS : découverte automatique des données publiées, lecture en continu, filtrage, fenêtre de paramétrage.</li>
+            <li>Intégration au framework de test de l'équipe, dans un cadre réglementé par la norme IEC 62304 (logiciel de dispositif médical).</li>
+            <li>Packaging de l'outil en exécutable pour le rendre utilisable par toute l'équipe.</li>
+            <li>Travail en méthode agile (sprints, backlog).</li>
+          </ul>
+          <div class="stack"><span>Python</span><span>DDS</span><span>CycloneDDS</span><span>IHM</span><span>IEC 62304</span><span>Agile</span></div>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">2023<span class="co-logo"><img src="img/logo-ntnu.svg" alt="Logo NTNU"></span></div>
+        <div class="body">
+          <div>
+            <h3>Stage international · Interface pour REEF3D</h3>
+            <div class="where">NTNU, Trondheim (Norvège) · mai – juillet 2023 (12 semaines)</div>
+          </div>
+          <p>Au département de génie civil et environnemental de la NTNU, j'ai rejoint l'équipe de recherche qui développe REEF3D, un logiciel open source de simulation hydrodynamique (vagues, courants, interaction fluide-structure). Le logiciel se pilote avec près de 600 paramètres dans des fichiers texte, ce qui le rend difficile d'accès.</p>
+          <ul>
+            <li>Portage de l'interface REEF3D-GUI sur Windows, Linux, macOS et Ubuntu sous Windows, avec un tutoriel d'installation.</li>
+            <li>Nouvelle interface de préparation des simulations en PyQt : choix du modèle (CFD, FNPF, SFLOW), saisie guidée des 586 paramètres avec leurs descriptions et unités.</li>
+            <li>Lancement des calculs DiveMESH et REEF3D depuis l'interface (calcul parallèle MPI), avec barres de progression et remontée des erreurs.</li>
+            <li>Stage entièrement en anglais, au sein d'une équipe de chercheurs et de doctorants.</li>
+          </ul>
+          <div class="stack"><span>Python</span><span>PyQt</span><span>REEF3D</span><span>MPI</span><span>Linux</span><span>Anglais</span></div>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">2022<span class="co-logo"><img src="img/logo-corys.png" alt="Logo CORYS"></span></div>
+        <div class="body">
+          <div>
+            <h3>Stage de 1<sup>re</sup> année · Outils de simulation dynamique</h3>
+            <div class="where">CORYS, Grenoble · juin – juillet 2022 (5 semaines)</div>
+          </div>
+          <p>CORYS conçoit des simulateurs de formation et d'ingénierie pour l'énergie et le ferroviaire. Au sein de l'équipe R&amp;D du pôle Énergie, j'ai remplacé des tableurs Excel de calcul par des outils Python, plus faciles à maintenir. Ces tableurs calculent les paramètres de composants électriques utilisés dans les simulateurs de centrales.</p>
+          <ul>
+            <li>Conversion de 5 tableurs en Python : transformateur triphasé, moteur asynchrone (modèle complet et simplifié), alternateur (deux méthodes de calcul, dont la méthode de Canay).</li>
+            <li>Remplacement du solveur Excel par une optimisation SciPy : comparaison des méthodes, choix de BFGS pour le meilleur compromis précision / temps de calcul.</li>
+            <li>Validation des résultats par comparaison systématique avec les tableurs d'origine.</li>
+            <li>Création d'une interface pour chaque outil (saisie ou import des entrées, résultats et graphiques), réunies dans un lanceur commun avec une page d'aide.</li>
+          </ul>
+          <div class="stack"><span>Python</span><span>pandas</span><span>SciPy</span><span>Matplotlib</span><span>IHM</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="pollutec">
+    <div class="sec-head with-logo">
+      <img class="logo" src="img/logo-pollutec.webp" alt="Logo Pollutec">
+      <div>
+        <span class="label">Temps fort · projet xKy</span>
+        <h2>Salon Pollutec 2025</h2>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-text">
+        <p>Avec Thomas Calmant, j'ai présenté le projet xKy sur le stand du Pôle universitaire d'innovation de l'Université Grenoble Alpes, au salon Pollutec 2025 à Lyon. Pollutec est le grand salon professionnel des solutions environnementales et énergétiques.</p>
+        <div class="stack"><span>Pollutec 2025</span><span>Université Grenoble Alpes</span><span>xKy</span></div>
+        <figure class="event-photo"><img src="img/pollutec-stand.webp" alt="Clément et Thomas Calmant sur le stand du Pôle universitaire d'innovation Grenoble Alpes, avec le capteur xKy posé sur le comptoir" loading="lazy"><figcaption>Sur le stand de l'UGA, avec Thomas Calmant</figcaption></figure>
+      </div>
+      <a class="post" href="https://lnkd.in/p/e-7K78ny" target="_blank" rel="noopener">
+        <div class="post-head">
+          <span class="avatar" aria-hidden="true">JF</span>
+          <div><strong>Jérôme Ferrari</strong><small>Post ·octobre 2025</small></div>
+        </div>
+        <p>Jérôme annonce que le projet xKy a été présenté par Thomas Calmant et Clément Basdevant sur le stand du Pôle universitaire d'innovation de l'UGA, et remercie les organisateurs pour leur invitation.</p>
+        <span class="post-cta">Voir le post sur LinkedIn →</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="xky-page">
+    <div class="sec-head with-logo">
+      <img class="logo" src="img/logo-xky.webp" alt="Logo xKy G2Elab">
+      <div>
+        <span class="label">Communication · projet xKy</span>
+        <h2>La page LinkedIn xKy G2Elab</h2>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-text">
+        <p>Je gère la page LinkedIn du projet xKy au G2Elab. J'y publie les actualités du projet et de son capteur, qui remonte en temps réel les données du compteur Linky.</p>
+      </div>
+      <a class="post" href="https://www.linkedin.com/company/xky-g2elab" target="_blank" rel="noopener">
+        <div class="post-head">
+          <img class="avatar-img" src="img/logo-xky.webp" alt="">
+          <div><strong>xKy G2Elab</strong><small>Page entreprise</small></div>
+        </div>
+        <span class="post-cta">Suivre xKy sur LinkedIn →</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="visites" class="visits-wrap">
+    <span class="label">Visites scientifiques avec le G2Elab</span>
+    <div class="visits">
+      <article class="visit">
+        <img src="img/iter.webp" alt="Clément en casque et gilet de sécurité devant l'assemblage du tokamak d'ITER" loading="lazy">
+        <div>
+          <strong>ITER</strong> <span class="when-sm">21 juillet 2025 · Saint-Paul-lez-Durance</span>
+          <p>Visite du chantier du réacteur expérimental de fusion et de l'assemblage du tokamak.</p>
+        </div>
+      </article>
+      <article class="visit">
+        <img src="img/cern.webp" alt="Clément avec Thomas Calmant et Jérôme Ferrari devant un hall d'expérience du CERN" loading="lazy">
+        <div>
+          <strong>CERN</strong> <span class="when-sm">16 juillet 2026 · Genève</span>
+          <p>Visite du laboratoire européen de physique des particules avec Thomas Calmant et Jérôme Ferrari.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="sec-head">
+      <span class="label">Boîte à outils</span>
+      <h2>Compétences</h2>
+    </div>
+    <div class="core">
+      <span class="core-lang">Python</span>
+      <p>Mon langage principal : outils de calcul, interfaces, traitement de données et modèles d'IA, dans tous mes stages et au G2Elab.</p>
+      <div class="stack"><span>C++</span><span>SQL</span><span>Matlab</span><span>JavaScript · Vue.js</span></div>
+    </div>
+    <div class="skills">
+      <div class="skill">
+        <span class="skill-n">Data &amp; IA</span>
+        <p>Prévision de séries temporelles, analyse et visualisation de données, optimisation.</p>
+        <div class="stack"><span>PyTorch</span><span>N-BEATS</span><span>pandas</span><span>SciPy</span><span>Matplotlib</span><span>Deep learning</span></div>
+        <small>Mis en œuvre : prévision de consommation au G2Elab, CaStore, solveurs chez CORYS, vision par ordinateur à SeaTech</small>
+      </div>
+      <div class="skill">
+        <span class="skill-n">Interfaces &amp; UX</span>
+        <p>Des interfaces pensées pour leurs utilisateurs, du bureau au web.</p>
+        <div class="stack"><span>Vue.js</span><span>Quasar</span><span>PyQt · Qt</span><span>UI/UX</span></div>
+        <small>Mis en œuvre : interface web xKy, IHM de test chez Trixell, interface REEF3D à la NTNU, outils CORYS</small>
+      </div>
+      <div class="skill">
+        <span class="skill-n">Données &amp; systèmes</span>
+        <p>Collecte, stockage et échange de données de capteurs, calcul distribué.</p>
+        <div class="stack"><span>PostgreSQL</span><span>TimescaleDB</span><span>Kafka</span><span>API REST</span><span>DDS</span><span>MPI</span><span>Docker</span><span>Linux</span></div>
+        <small>Mis en œuvre : xKy et CaStore, communication DDS chez Trixell, calculs REEF3D</small>
+      </div>
+      <div class="skill">
+        <span class="skill-n">Méthodes &amp; qualité</span>
+        <p>Travail en équipe, validation rigoureuse et documentation.</p>
+        <div class="stack"><span>Git</span><span>Agile · Scrum</span><span>Cycle en V</span><span>IEC 62304</span><span>Sphinx-doc</span></div>
+        <small>Mis en œuvre : équipe agile au G2Elab et chez Trixell, logiciel médical chez Trixell</small>
+      </div>
+    </div>
+    <div class="radio">
+      <svg class="radio-icon" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M24 22v20"/><path d="M17 42h14"/><path d="M16 14a11 11 0 0 0 0 16"/><path d="M32 14a11 11 0 0 1 0 16"/><path d="M10 8a19 19 0 0 0 0 28"/><path d="M38 8a19 19 0 0 1 0 28"/></g><circle cx="24" cy="22" r="3.5" fill="currentColor"/></svg>
+      <div>
+        <span class="label">Certificat</span>
+        <strong>Opérateur radioamateur</strong>
+        <p>Titulaire du certificat d'opérateur radioamateur, qui valide des connaissances en électricité, électronique et propagation des ondes radio, ainsi qu'en réglementation des radiocommunications.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formation">
+    <div class="sec-head">
+      <span class="label">Études</span>
+      <h2>Formation</h2>
+    </div>
+    <div class="edu">
+      <div>
+        <div class="school">
+          <a class="school-logo" href="https://seatech.univ-tln.fr/lecole-seatech/" target="_blank" rel="noopener" aria-label="Site de l'école SeaTech"><img src="img/logo-seatech.webp" alt="Logo SeaTech Toulon"></a>
+          <div class="row"><h3>SeaTech, école d'ingénieurs · Toulon</h3><span class="yr">2021 – 2024</span></div>
+          <p>École partenaire de Grenoble INP, spécialisée dans les sciences et technologies marines. 3<sup>e</sup> année en parcours IRIS : ingénierie et sciences des données, information, systèmes. Projet de deep learning : conception et entraînement d'un modèle de vision par ordinateur.</p>
+          <div class="links"><a href="https://seatech.univ-tln.fr/lecole-seatech/" target="_blank" rel="noopener">Découvrir l'école SeaTech</a></div>
+        </div>
+        <div class="school">
+          <div class="row"><h3>CPGE PTSI · Lycée Vaucanson, Grenoble</h3><span class="yr">2019 – 2021</span></div>
+          <p>TIPE : étude de la télécabine de Chamrousse.</p>
+        </div>
+      </div>
+      <div class="side">
+        <div class="langs">
+          <span class="label">Langues</span>
+          <div class="lang"><span>Français</span><div class="bar"><b style="width:100%"></b></div><small>natif</small></div>
+          <div class="lang"><span>Anglais</span><div class="bar"><b style="width:80%"></b></div><small>B2/C1</small></div>
+          <div class="lang"><span>Allemand</span><div class="bar"><b style="width:50%"></b></div><small>B1</small></div>
+        </div>
+        <div class="langs">
+          <span class="label">Diplômes &amp; certificats</span>
+          <div class="certs"><span>Diplôme d'ingénieur SeaTech</span><span>DE de ski nordique (en cours)</span><span>Certificat radioamateur</span><span>Brevet de pilote de parapente</span><span>Permis B</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="award">
+      <img class="award-photo" src="img/prix-lamblin.webp" alt="Clément, Elina Descombes et Tom Brochard avec leurs diplômes du Prix Lamblin 2024 devant le panneau SeaTech" loading="lazy">
+      <div class="award-text">
+        <span class="yr">Lauréat 2024</span>
+        <h3>Prix Lamblin</h3>
+        <p>Chaque année, le Prix Lamblin récompense l'engagement étudiant pour le rayonnement de SeaTech. Je l'ai reçu avec Elina Descombes et Tom Brochard, en duo avec Tom.</p>
+      </div>
+      <a class="post" href="https://lnkd.in/p/eBNkzusk" target="_blank" rel="noopener">
+        <div class="post-head">
+          <span class="avatar" aria-hidden="true">CB</span>
+          <div><strong>Clément Basdevant</strong><small>Post · décembre 2024</small></div>
+        </div>
+        <p>Très fier d'avoir reçu le Prix Lamblin avec mes deux acolytes Elina Descombes et Tom Brochard. Recevoir le Prix Lamblin, en duo avec Tom, est pour moi une vraie réussite.</p>
+        <span class="post-cta">Voir le post sur LinkedIn →</span>
+      </a>
+    </div>
+  </section>
+
+  </div>
+
+  <div data-tab="ski">
+  <header class="track-head ski">
+    <span class="label">Auto-entrepreneur · Chartreuse</span>
+    <h2>Moniteur de <span>ski nordique</span></h2>
+    <p>En parallèle de mon poste au G2Elab, j'enseigne le ski de fond et le biathlon au Col de Porte, et j'entraîne les athlètes du club Ski Nordique Chartreuse, l'hiver sur la neige comme l'été.</p>
+  </header>
+
+  <section id="ski-activites">
+    <div class="ski-photos">
+      <figure><img src="img/ski-portrait.webp" alt="Clément en tenue de moniteur de l'École de Porte, sur une piste de ski de fond damée" loading="lazy"><figcaption>Col de Porte</figcaption></figure>
+      <figure><img src="img/ski-cours.webp" alt="Clément donne un cours de ski de fond à quatre enfants en dossards de l'École de Porte" loading="lazy"><figcaption>Cours enfants</figcaption></figure>
+    </div>
+    <div class="roles">
+      <article class="role-card">
+        <div class="role-top"><span class="co-logo"><img src="img/logo-ecoledeporte.png" alt="Logo École de Porte"></span><span class="since">Depuis décembre 2025</span></div>
+        <div>
+          <h3>Moniteur stagiaire</h3>
+          <div class="where">École de Porte · Col de Porte, Sarcenas</div>
+        </div>
+        <p>L'École de Porte est une équipe de professionnels de la montagne installée au Col de Porte, à 20 minutes de Grenoble. J'y enseigne le ski de fond et le biathlon, en individuel ou en groupe, notamment aux enfants.</p>
+        <div class="links"><a href="https://www.ecoledeporte.com/" target="_blank" rel="noopener">Réserver un cours sur ecoledeporte.com</a></div>
+      </article>
+      <article class="role-card">
+        <div class="role-top"><span class="co-logo"><img src="img/logo-snc.webp" alt="Logo Ski Nordique Chartreuse"></span><span class="since">Toute l'année</span></div>
+        <div>
+          <h3>Coach</h3>
+          <div class="where">Ski Nordique Chartreuse · Saint-Pierre-de-Chartreuse</div>
+        </div>
+        <p>Au club de ski nordique et de biathlon du massif, j'encadre les entraînements et j'accompagne les athlètes en compétition.</p>
+        <ul>
+          <li><strong>L'hiver :</strong> ski de fond et biathlon sur la neige.</li>
+          <li><strong>L'été :</strong> ski-roue et course à pied.</li>
+        </ul>
+        <div class="links"><a href="https://sites.google.com/view/skinordiquechartreuse" target="_blank" rel="noopener">Le site du club</a></div>
+      </article>
+    </div>
+
+    <a class="role-card training" href="https://www.ensm.sports.gouv.fr/cnsnmm/" target="_blank" rel="noopener">
+      <span class="co-logo cnsnmm"><img src="img/logo-cnsnmm.svg" alt="Logo CNSNMM"></span>
+      <div>
+        <span class="since">Formation · fin du 1<sup>er</sup> cycle en 2026</span>
+        <h3>DE de ski nordique au CNSNMM</h3>
+        <div class="where">Centre National de Ski Nordique et de Moyenne Montagne · Prémanon</div>
+      </div>
     </a>
 
-	   <!-- Barre de menu -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-	    <div class="container-fluid">
-	        <a class="navbar-brand" href="#">Mon CV</a>
-	        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-	            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	            <span class="navbar-toggler-icon"></span>
-	        </button>
-	        <div class="collapse navbar-collapse" id="navbarNav">
-	            <ul class="navbar-nav">
-	                <li class="nav-item">
-	                    <a class="nav-link" href="#a-propos-de-moi">À propos de moi</a>
-	                </li>
-	                <li class="nav-item">
-	                    <a class="nav-link" href="#formation">Formation</a>
-	                </li>
-	                <li class="nav-item">
-	                    <a class="nav-link" href="#experience">Expérience</a>
-	                </li>
-	                <li class="nav-item">
-	                    <a class="nav-link" href="#me-contacter" style="background-color: red; color: white; padding: 5px; border-radius: 5px;">
-	                        <i class="fas fa-envelope"></i> Me contacter
-	                    </a>
-	                </li>
-	            </ul>
-	        </div>
-	    </div>
-	</nav>
-
-
-
-    <div class="cv-container">
-        <div class="head">
-	    <div class="background-image"></div>
-	    <div class="content">
-	        <div class="row">
-	            <div class="col-md-6">
-	                <a href="https://www.linkedin.com/in/clément-basdevant-253357230" target="_blank">
-	                    <br><br><br><br><br><br><br><br>
-	                    <center>
-	                    <img src="images/Photo_id4.jpeg" height="273" width="273" style="border-radius: 50%;" />
-	                	</center>
-	                </a>
-	            </div>
-	            <div class="col-md-6">
-	                <div style="text-align: left;">
-	                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	                    <div style="border: 2px solid #000; padding: 20px; border-radius: 10px;">
-	                        <h1 style="font-size: 2.5rem; font-weight: bold; color: #000; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); letter-spacing: 1px;">Clément BASDEVANT</h1>
-	                        <h3 style="color:#000000; font-size: 1.5rem;">Dipômé de l'école d'ingénieurs SeaTech<br>Ingénieur d'études au laboratoire G2Elab</h3>
-	                    </div>
-	                    <br><br><br><br>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-
-
-
-
-
-
-
-        <div id="a-propos-de-moi" class="left-column">
-        	<center>
-        	<h2 style="color: #FFA500; font-size: 3rem; font-weight: bold;">&Agrave; propos de moi</h2>
-        	</center>
-
-        	<h2>Profil personnel</h2>
-            <p style="text-align: justify;"> &Eacute;tudiant en &eacute;cole d’ing&eacute;nieurs à Toulon, je suis &agrave; la recherche d'un stage ing&eacute;nieur de fin d’&eacute;tudes de minimum 22 semaines entre mars et aout 2024 dans le domaine des sciences et des m&eacute;tiers de l'informatique. Ce stage s'inscrira dans le cadre de fin de troisi&egrave;me année de mon dipl&ocirc;me.
-            </p>
-            <p style="text-align: justify;">Je suis actuellement en troisième année d'études au sein de l'école d'ingénieurs SeaTech à Toulon,France, dans la filière IRIS (IngénieRie et Sciences des Données, Information, Systèmes). Mon cursus académique dans cette filière m'a permis d'acquérir une solide base de compétences en sciences des données, gestion de l'information, et systèmes informatiques. De plus, j'ai eu l'opportunité d'effectuer deux stages, l'un chez CORYS et l'autre au laboratoire de l'NTNU en Norvège. Ces expériences m'ont apporté une vision pratique et une compréhension globale des enjeux technologiques actuels. J'ai pu y mettre en oeuvre des compétences variées, notamment en programmation Python.
-			</p>
-            
-                <div class="contact-card">
-			        <h2>Coordonnées</h2>
-			        <a href="https://www.linkedin.com/in/clément-basdevant-253357230" target="_blank">
-			            <i class="fab fa-linkedin"></i> Clément Basdevant
-			        </a>
-			        <br>
-			        <a href="tel:0781610646"><i class="fas fa-phone-alt"></i> 07 81 61 06 46</a><br>
-			        <a href="https://www.google.com/maps/search/?api=1&query=7+avenue+de+Verdun,+38240+Meylan" target="_blank"><i class="fas fa-home"></i> 7 avenue de Verdun, 38240 Meylan</a><br>
-			        <a href="mailto:clement.basdevant.24@seatech.fr"><i class="fas fa-envelope"></i> clement.basdevant.24@seatech.fr</a>
-			    </div>
-            <h2>Syst&egrave;mes d'information</h2>
-            <div class="bubbles-container">
-		        <div class="bubble"><i class="fab fa-python"></i> Python</div>
-		        <div class="bubble"><strong>C</strong> C/C++</div>
-		        <div class="bubble"><strong>LATEX</strong></div>
-		        <div class="bubble">MATLAB</div>
-		        <div class="bubble"><i class="fab fa-java"></i> Java</div>
-		        <div class="bubble"><i class="fab fa-windows"></i> Microsoft Office</div>
-		    </div>
-            <h2>Langues</h2>
-            <div class="language-cards-container">
-		        <div class="language-card">
-		            <h3>Français</h3>
-		            <p class="language-level">Langue maternelle</p>
-		        </div>
-		        <div class="language-card">
-		            <h3>Anglais</h3>
-		            <p class="language-level">TOEIC 880</p>
-		        </div>
-		        <div class="language-card">
-		            <h3>Allemand</h3>
-		            <p class="language-level">B1</p>
-		        </div>
-		    </div>
-            <div class="hobbies-container">
-        <div class="hobby-card">
-            <h2>Loisirs</h2>
-            <ul>
-                <li><i class="fas fa-futbol"></i> Handball - Pratiqué en compétition depuis 12 ans</li>
-                <li><i class="fas fa-skiing"></i> Ski de fond - Pratiqué en compétition depuis 9 ans</li>
-                <li><i class="fas fa-running"></i> Course à pied - Pratique de course et trail en compétition</li>
-                <li><i class="fas fa-biking"></i> Cyclisme</li>
-            </ul>
+    <div class="ski-extra">
+      <dl class="ski-facts">
+        <div><dt>Statut</dt><dd>Auto-entrepreneur</dd></div>
+        <div><dt>Diplôme</dt><dd>DE de ski nordique en cours (CNSNMM)</dd></div>
+        <div><dt>Station</dt><dd>Col de Porte, Chartreuse</dd></div>
+        <div><dt>J'enseigne</dt><dd>Ski de fond, biathlon</dd></div>
+        <div><dt>J'entraîne l'été</dt><dd>Ski-roue, course à pied</dd></div>
+      </dl>
+      <a class="post" href="https://lnkd.in/p/e6SqhANv" target="_blank" rel="noopener">
+        <div class="post-head">
+          <span class="avatar" aria-hidden="true">CB</span>
+          <div><strong>Clément Basdevant</strong><small>Post ·janvier 2026</small></div>
         </div>
+        <div class="post-text">
+          <p>Très fier de vous annoncer que je suis désormais moniteur de ski de fond au sein de l'École de Porte, depuis décembre, en tant que stagiaire.</p>
+          <p>C'est une grande joie de pouvoir transmettre ma passion pour la glisse dans ma station de toujours, au Col de Porte en Chartreuse. Cette nouvelle aventure se déroule en parallèle de mon poste au G2Elab.</p>
+          <p>À très bientôt sur les pistes !</p>
+        </div>
+        <span class="post-cta">Voir le post sur LinkedIn →</span>
+      </a>
     </div>
+  </section>
+  </div>
+
+  <section class="teasers" aria-labelledby="perso-title">
+    <div class="teasers-head">
+      <span class="label">En dehors du travail</span>
+      <h2 id="perso-title">Engagement, sport &amp; loisirs</h2>
+    </div>
+    <div class="teaser-grid">
+      <a class="teaser" href="#course">
+        <img src="img/arrivee-rosiere.webp" alt="" loading="lazy">
+        <div><span class="label">Course à pied</span><strong>1<sup>er</sup> du 10 km de la Rosière</strong><span>Athlétisme au CAPRG, records et article du Dauphiné</span></div>
+      </a>
+      <a class="teaser" href="#parapente">
+        <img src="img/icare-vol.webp" alt="" loading="lazy">
+        <div><span class="label">Parapente</span><strong>3<sup>e</sup> de l'Icarnaval, Coupe Icare</strong><span>Le Petit Prince à la Coupe Icare 2026</span></div>
+      </a>
+      <a class="teaser" href="#association">
+        <img src="img/seatech-alumni.webp" alt="" loading="lazy">
+        <div><span class="label">Association</span><strong>Secrétaire de SeaTech Alumni</strong><span>Réseau des diplômés, cérémonie de fin d'études, afterworks</span></div>
+      </a>
+    </div>
+  </section>
+  </main>
+
+  <main data-page="perso">
+  <div class="sub-head">
+    <a class="back" href="#ingenieur">← Retour au profil pro</a>
+    <h1>Sport &amp; loisirs</h1>
+  </div>
+  <nav class="tracks sport-tabs" aria-label="Sports">
+    <a class="track photo-track" href="#course" data-tablink="course">
+      <img src="img/arrivee-rosiere.webp" alt="">
+      <div>
+        <span class="label">Athlétisme · CAPRG</span>
+        <strong>Course à pied</strong>
+        <span>Demi-fond, cross et route : 1<sup>er</sup> du 10 km de la Rosière</span>
+      </div>
+    </a>
+    <a class="track photo-track ski" href="#parapente" data-tablink="parapente">
+      <img src="img/icare-vol.webp" alt="">
+      <div>
+        <span class="label">Club St Hil'Air</span>
+        <strong>Parapente</strong>
+        <span>Brevet de pilote, Coupe Icare en Petit Prince</span>
+      </div>
+    </a>
+  </nav>
+
+  <div data-tab="course">
+  <section id="sport">
+    <div class="sec-head">
+      <span class="label">Athlétisme</span>
+      <h2>Côté piste</h2>
+    </div>
+    <div class="pilot clubs">
+      <a class="pilot-card" href="https://www.athletisme-capr.fr/" target="_blank" rel="noopener">
+        <span class="co-logo" style="padding:6px"><img src="img/logo-caprg.png" alt="Logo CAPRG"></span>
+        <div><span class="label">Licencié</span><strong>CA Pontcharra La Rochette Grésivaudan</strong><span>Mon club FFA, à Pontcharra</span></div>
+      </a>
+      <a class="pilot-card" href="https://www.instagram.com/illegiteam/" target="_blank" rel="noopener">
+        <span class="co-logo" style="padding:0"><img src="img/logo-illegiteam.jpg" alt="Logo Illegiteam"></span>
+        <div><span class="label">Entraînement</span><strong>Illegiteam</strong><span>Mon groupe d'entraînement · Instagram →</span></div>
+      </a>
+    </div>
+    <div class="win">
+      <div class="win-text">
+        <div class="place"><b>1<sup style="font-size:.4em">er</sup></b><span>sur le 10 km · 30 août 2026</span></div>
+        <h3>Course de la Rosière, Pontcharra</h3>
+        <p>Victoire sur le 10 km du cross organisé par mon club, le CAPRG, pour sa 20<sup>e</sup> édition. Un circuit champêtre et roulant autour des Lônes, bouclé la veille de mon anniversaire.</p>
+        <div class="splits">
+          <div><span class="label">Temps</span><strong>34'12</strong></div>
+          <div><span class="label">Allure</span><strong>3'25/km</strong></div>
         </div>
-
-        <div class="right-column">
-		<div id="formation" class="formation">
-		        <h2 class="formation-title">Formation</h2>
-		        <div class="formation-item">
-		            <a href="https://seatech.univ-tln.fr/" target="_blank">
-		                <h3>2021-2024 &Eacute;cole d'ing&eacute;nieur : SeaTech Toulon</h3>
-		                <img src="images/Logo_SeaTech.png" height="67" width="256" alt="SeaTech logo">
-		            </a>
-		            <p>&Eacute;cole partenaire de Grenoble INP</p>
-		            <p>&Eacute;cole sp&eacute;cialis&eacute;e dans le domaine des sciences et technologies marines</p>
-		        </div>
-		        <div class="formation-item">
-		            <h3>2023 : Projet de fin d'ann&eacute;e</h3>
-		            <img src="images/deep.jpg" height="70" width="130" alt="Projet deep learning">
-		            <p>D&eacute;veloppement d'une application bas&eacute;e sur l'utilisation d'une intelligence artificielle d'un modèle de Deep Learning. Reconnaisance d'espèces de poissons avec développement d'une interface utilisateurs.</p>
-		        </div>
-		        <div class="formation-item">
-		            <h3>2023 : Projet Bejweled</h3>
-		            <img src="images/bejewel.PNG" height="100" width="100" alt="Projet bejewel">
-		            <p>Création d'un jeu de puzzle en c++ où les joueurs doivent aligner des gemmes de même couleur pour les faire disparaître et marquer des points, en essayant de réaliser des combinaisons spéciales pour des scores plus élevés.</p>
-		        </div>
-		        <div class="formation-item">
-		            <h3>2021 : Projet TIPE</h3>
-		            <img src="images/chamrousse.JPG" height="150" width="200" alt="Photo télécabine chamrousse">
-		            <p>&Eacute;tude de la nouvelle t&eacute;l&eacute;cabine de Chamrousse. Etude du choix du câble, de la partie motrice de la télécabine et de la tension appliqué au câble.</p>
-		        </div>
-		        <div class="formation-item">
-		            <h3>2019-2021: CPGE PTSI</h3>
-		            <img src="images/vox.jpg" height="150" width="150" alt="logo vaucanson">
-		            <p>Lyc&eacute;e Vaucanson Grenoble. Classe préparatoire aux grandes écoles, PTSI-PT</p>
-		        </div>
-		        <div class="formation-item">
-		            <h3>2019: BACCALAUREAT SERIE S</h3>
-		            <img src="images/LGM.png" height="120" width="276" alt="logo LGM">
-		            <p>Lycée du Grésivaudan à Meylan</p>
-		        </div>
-	    </div>
-		<div id="experience" class="experience">
-		        <h2 class="experience-title">Expérience professionnelle</h2>
-
-			<div class="experience-item">
-				<a href="https://www.trixell.com/" target="_blank">
-				    <h3>2024 : Trixell</h3>
-				    <img src="images/Trixell.jpg" height="70" width="200" alt="Trixell logo">
-				</a>
-				<p>Stage de fin d’études de 5 mois au sein de l’équipe test. Développement en Python d’outils de communication DDS (Data Distribution Service).</p>
-			</div>
-		        <div class="experience-item">
-		            <a href="https://www.ntnu.edu/" target="_blank">
-		                <h3>2023: Norvège-NTNU</h3>
-		                <img src="images/ntnu.png" height="100" width="100" alt="NTNU logo">
-		            </a>
-		            <p>Stage international de 2&egrave;me ann&eacute;e d'&eacute;cole d'ing&eacute;nieurs de 12 semaines à l’universit&eacute; de Trondheim, Norv&egrave;ge. D&eacute;veloppement en langage python d’une interface post-processing d’un logiciel d’hydrodynamique</p>
-		        </div>
-		        <div class="experience-item">
-		            <a href="https://www.corys.com/en/" target="_blank">
-		                <h3>2022 : CORYS</h3>
-		                <img src="images/CORYS.png" height="88.5" width="212.25" alt="CORYS logo">
-		            </a>
-		            <p>Stage de 1&egrave;re ann&eacute;e d'&eacute;cole d'ing&eacute;nieur de 5 semaines D&eacute;veloppement en langage python d’outils deparam&eacute;trage d’objets de mod&eacute;lisation &eacute;lectrique</p>
-		        </div>
-		        <div class="experience-item">
-		            <a href="https://www.auvieuxcampeur.fr/" target="_blank">
-		                <h3>2016: Au Vieux Campeur</h3>
-		                <img src="images/AVC.png" height="70" width="140" alt="Au vieux campeur logo">
-		            </a>
-		            <p>Stage d'observation de 3&egrave;me d'une semaine &agrave; Grenoble Approvisionnement de rayon, &eacute;tiquetage et vente de produits</p>
-		        </div>
-		    </div>
-
-            <div class="cursus">
-            		<h2 style="color: #B22222; font-size: 3rem; font-weight: bold;">&Eacute;l&eacute;ments du Cursus</h2>
-                <ul>
-                    <h3 style="color:blue;">Outils math&eacute;matiques</h3>
-                    <p>Analyse de donn&eacute;es multidimensionnelles – classification– apprentissage automatique - Algorithmique– M&eacute;thodes num&eacute;riques pour l’optimisation</p>
-                    <h3 style="color:blue;">Informatique-programmation</h3>
-                    <p>Conception d’Interfaces HommeMachine-Programmation Orient&eacute;e Objet-Syst&egrave;mes embarqu&eacute;s-Protocoles r&eacute;seaux-D&eacute;veloppement Java et Android -Applications mobiles-Communications num&eacute;riques - Processeur de signal num&eacute;rique – Syst&egrave;mes embarqu&eacute;s - Communications num&eacute;riques – Mod&eacute;lisation/Performances /Optimisation - R&eacute;seaux de capteurs</p>
-                    <h3 style="color:blue;">Traitement du signal/images</h3>
-                    <p>Traitement num&eacute;rique des signaux-Analyse spectrale – Estimation D&eacute;tection – D&eacute;cision-Traitement d’image avanc&eacute;-Instrumentation – Capteurs – Vision - Observation/cartographie par t&eacute;l&eacute;d&eacute;tection satellitaire/a&eacute;rienne-  Traitements multi-capteurs - Analyse avanc&eacute;e des signaux biologiques & acoustiques - Acoustique sous-marine – Syst&egrave;me sonar - Imagerie sous-marine – Bathym&eacute;trie</p>
-                    <h3 style="color:blue;">Gestion/Management/Communication</h3>
-                </ul>
-            </div>
+        <div class="links">
+          <a href="https://www.athle.fr/bases/liste.aspx?frmbase=resultats&amp;frmmode=1&amp;frmespace=0&amp;frmcompetition=311477" target="_blank" rel="noopener">Résultats officiels FFA</a>
+          <a href="https://www.athletisme-capr.fr/180/courses-de-la-rosiere-2026" target="_blank" rel="noopener">La course sur le site du club</a>
         </div>
+      </div>
+      <div class="photos">
+        <figure><img src="img/arrivee-rosiere.webp" alt="Clément Basdevant, dossard 105, tape dans les mains du public à l'arrivée" loading="lazy"><figcaption>Arrivée</figcaption></figure>
+        <figure><img src="img/podium-rosiere.webp" alt="Clément Basdevant sur la première marche du podium avec sa médaille" loading="lazy"><figcaption>Podium</figcaption></figure>
+      </div>
     </div>
 
-    <footer>
-        <p>Copyright &copy; 2023 BASDEVANT Cl&eacute;ment. Tous droits r&eacute;serv&eacute;s.</p>
-    </footer>
+    <article class="clip">
+      <a class="clip-img" href="img/dauphine-rosiere.webp" target="_blank" rel="noopener" aria-label="Voir l'article du Dauphiné Libéré en grand">
+        <img src="img/dauphine-rosiere.webp" alt="Article du Dauphiné Libéré : Les coureurs locaux brillent lors du cross du club athlétique" loading="lazy">
+      </a>
+      <div class="clip-text">
+        <span class="label">Dans la presse · Le Dauphiné Libéré · Pontcharra</span>
+        <h3>« Les coureurs locaux brillent lors du cross du club athlétique »</h3>
+        <p>Le Dauphiné Libéré est revenu sur le cross du CAPRG : 212 coureurs au départ commun des 5 et 10 km dans les bois des Lônes, et une victoire du club sur le 10 km.</p>
+        <blockquote>« L'ingénieur au CNRS s'est imposé avec une dizaine de secondes d'avance »</blockquote>
+        <p class="credits">La course comptait pour le Grésivaudan Running Challenge. Cliquez sur la coupure pour la lire en entier.</p>
+      </div>
+    </article>
+
+    <article class="camp">
+      <div class="camp-head">
+        <span class="co-logo" style="padding:0"><img src="img/logo-illegiteam.jpg" alt="Logo Illegiteam"></span>
+        <div>
+          <span class="label">Stage d'entraînement · janvier 2026 · 2 semaines</span>
+          <h3>Stage Illegiteam à Monte Gordo</h3>
+        </div>
+      </div>
+      <p>Début janvier 2026, j'ai passé deux semaines en stage d'entraînement avec le groupe Illegiteam à Monte Gordo, au Portugal : séances sur piste, footings dans la pinède et sur la plage.</p>
+      <div class="camp-grid">
+        <img class="tall" src="img/stage-27.webp" alt="Clément en débardeur vert Illegiteam sur la piste" loading="lazy">
+        <img class="tall" src="img/stage-31.webp" alt="Footing sur la plage au coucher du soleil, un coureur et un cycliste" loading="lazy">
+        <img src="img/stage-28.webp" alt="Le groupe Illegiteam entre deux répétitions sur la piste" loading="lazy">
+        <img src="img/stage-25.webp" alt="Clément en footing sur la piste avec deux coureurs" loading="lazy">
+        <img src="img/stage-30.webp" alt="Footing en groupe sur un chemin de sable dans la pinède" loading="lazy">
+        <img src="img/stage-26.webp" alt="Groupe de coureurs en mouvement, photo floue de vitesse" loading="lazy">
+      </div>
+      <p class="credits">Photos : @boucle_d.o.r</p>
+    </article>
+
+    <div class="records">
+      <div class="sec-head" style="margin-bottom:18px">
+        <span class="label">Records personnels · source FFA</span>
+        <h3 style="font-size:26px">Mes records</h3>
+      </div>
+      <div class="pbs" aria-label="Records personnels sur piste">
+        <div class="pb"><span class="ev">400 m</span><strong>51"89</strong><small>2 mai 2026 · Aix-les-Bains</small></div>
+        <div class="pb"><span class="ev">800 m</span><strong>1'56"09</strong><small>1 juil. 2026 · Annecy-le-Vieux</small></div>
+        <div class="pb"><span class="ev">1 500 m</span><strong>3'59"66</strong><small>27 mai 2026 · Grenoble</small></div>
+        <div class="pb"><span class="ev">5 km route</span><strong>15'00</strong><small>23 nov. 2025 · Vénissieux</small></div>
+      </div>
+    </div>
+
+    <details class="season">
+      <summary>Voir toute la saison 2026</summary>
+      <table>
+        <thead><tr><th>Date</th><th>Épreuve</th><th class="perf">Perf.</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>30 août</td><td>10 km, Course de la Rosière <span class="note">· 1<sup>er</sup></span></td><td class="perf">34'12</td></tr>
+          <tr><td>1 juil.</td><td>800 m</td><td class="perf">1'56"09</td></tr>
+          <tr><td>20 juin</td><td>800 m</td><td class="perf">1'57"01</td></tr>
+          <tr><td>30 mai</td><td>800 m</td><td class="perf">1'56"49</td></tr>
+          <tr><td>27 mai</td><td>1 500 m</td><td class="perf">3'59"66</td></tr>
+          <tr><td>17 mai</td><td>800 m</td><td class="perf">1'56"49</td></tr>
+          <tr><td>17 mai</td><td>Longueur</td><td class="perf">5,29 m</td></tr>
+          <tr><td>2 mai</td><td>4 × 400 m</td><td class="perf">3'26"29</td></tr>
+          <tr><td>2 mai</td><td>400 m</td><td class="perf">51"89</td></tr>
+          <tr><td>8 mars</td><td>5 km</td><td class="perf">16'02</td></tr>
+          <tr><td>15 févr.</td><td>Cross, course courte</td><td class="perf">14'50</td></tr>
+          <tr><td>25 janv.</td><td>Cross, course courte</td><td class="perf">14'13</td></tr>
+        </tbody>
+      </table>
+      <p class="links" style="margin-top:12px"><a href="https://www.athle.fr/athletes/2945639/resultats" target="_blank" rel="noopener">Ma fiche athlète FFA</a></p>
+    </details>
+  </section>
+
+  </div>
+
+  <div data-tab="parapente">
+  <section id="icare">
+    <div class="sec-head">
+      <span class="label">Parapente</span>
+      <h2>Côté ciel</h2>
+    </div>
+    <div class="pilot">
+      <a class="pilot-card" href="https://clubsthilair.fr/" target="_blank" rel="noopener">
+        <span class="co-logo" style="padding:4px"><img src="img/logo-sthilair.png" alt="Logo Club St Hil'Air"></span>
+        <div><span class="label">Mon club</span><strong>Club St Hil'Air</strong><span>Club de parapente en Isère</span></div>
+      </a>
+      <div class="pilot-card">
+        <span class="co-logo"><img src="img/logo-ffvl.png" alt="Logo FFVL"></span>
+        <div><span class="label">Brevet FFVL</span><strong>Brevet de pilote</strong><span>Obtenu le 15 septembre 2025</span></div>
+      </div>
+      <a class="pilot-card" href="https://www.syride.com/fr/pilotes/Cl%C3%A9mentPlouf" target="_blank" rel="noopener">
+        <span class="co-logo syride">Syride</span>
+        <div><span class="label">Carnet de vol</span><strong>Mes vols</strong><span>Traces GPS sur Syride →</span></div>
+      </a>
+    </div>
+    <div class="icare">
+      <figure class="big"><img src="img/icare-vol.webp" alt="Clément en parapente, installé dans un avion rouge en costume du Petit Prince, au-dessus de la vallée du Grésivaudan" loading="lazy"><figcaption>En vol</figcaption></figure>
+      <figure><img src="img/icare-atterrissage.webp" alt="Atterrissage en courant avec le costume d'avion rouge et l'écharpe jaune" loading="lazy"><figcaption>Atterrissage</figcaption></figure>
+      <figure><img src="img/icare-deco.webp" alt="Clément en Petit Prince, une rose à la main, à côté de l'avion rouge sur l'aire de décollage" loading="lazy"><figcaption>Au décollage</figcaption></figure>
+    </div>
+    <figure class="icare-video">
+      <video src="img/icare-video.mp4" controls playsinline preload="metadata" poster="img/icare-atterrissage.webp"></video>
+      <figcaption class="credits">L'atterrissage à la Coupe Icare, vu par France TV</figcaption>
+    </figure>
+    <div class="icare-text">
+      <div class="place"><b>3<sup style="font-size:.4em">e</sup></b><span>Icarnaval · solo</span></div>
+      <div class="body">
+        <h3 style="font-size:24px">Le Petit Prince à la Coupe Icare</h3>
+        <p>À l'Icarnaval, le concours de déguisements volants de la Coupe Icare, j'ai pris la 3<sup>e</sup> place en catégorie solo aux commandes de l'avion du Petit Prince. Le costume a été conçu et fabriqué au Fablab de Grenoble INP – Ense3 avec mon collègue Jérôme Ferrari, pendant nos pauses de midi.</p>
+        <a class="post" href="https://lnkd.in/p/e2qNxq24" target="_blank" rel="noopener">
+          <div class="post-head">
+            <span class="avatar" aria-hidden="true">JF</span>
+            <div><strong>Jérôme Ferrari</strong><small>Post ·septembre 2026</small></div>
+          </div>
+          <p>Jérôme annonce la 3<sup>e</sup> place à l'Icarnaval du costume du Petit Prince, conçu et fabriqué au Fablab de Grenoble INP – Ense3, avec à son bord « Clément Basdevant, un ingénieur du G2Elab ».</p>
+          <p class="post-quote">« C'est vraiment un plaisir d'avoir pu occuper nos pauses du midi »</p>
+          <span class="post-cta">Lire le post complet sur LinkedIn →</span>
+        </a>
+        <p class="credits">Photos : Thibaud Galai Photography, Thomas Calmant</p>
+      </div>
+    </div>
+
+    <div class="volunteer">
+      <figure><img src="img/icare-staff.webp" alt="Clément en chasuble Staff Atterro / Déco de la Coupe Icare, sur l'aire de décollage au lever du jour, la vallée dans la brume" loading="lazy"></figure>
+      <div class="body">
+        <span class="label">Bénévole · Coupe Icare 2025 et 2026</span>
+        <h3>Dans les coulisses</h3>
+        <p>Avec le Club St Hil'Air, j'ai été bénévole sur la Coupe Icare en 2025 et en 2026. En 2026, j'ai aussi volé en Petit Prince.</p>
+        <ul>
+          <li>Staff au décollage.</li>
+          <li>Montage du stand de matériel d'occasion du club.</li>
+        </ul>
+        <div class="links"><a href="https://clubsthilair.fr/" target="_blank" rel="noopener">Le site du Club St Hil'Air</a></div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <section id="cyclisme" class="also">
+    <svg class="also-icon" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="32" r="8"/><circle cx="37" cy="32" r="8"/><path d="M11 32l8-14h12l6 14"/><path d="M19 18l6 14h-14"/><path d="M29 12h5"/><path d="M31 12l-2 6"/></g></svg>
+    <div>
+      <span class="label">Aussi en selle</span>
+      <strong>Cyclisme</strong>
+      <p>Vélo de route.</p>
+    </div>
+  </section>
+  </main>
+
+  <main data-page="asso">
+  <div class="sub-head">
+    <a class="back" href="#ingenieur">← Retour au profil pro</a>
+    <div class="sec-head with-logo" style="margin:0">
+      <img class="logo" src="img/logo-seatech.webp" alt="Logo SeaTech" style="width:120px;padding:8px">
+      <div>
+        <span class="label">Engagement associatif · secrétaire depuis avril 2026</span>
+        <h1>SeaTech Alumni</h1>
+      </div>
+    </div>
+  </div>
+  <section id="alumni" style="padding-top:32px">
+    <div class="alumni">
+      <div class="alumni-text">
+        <p>SeaTech Alumni est l'association des ingénieurs diplômés de SeaTech. Le 8 avril 2026, j'ai été élu secrétaire du nouveau bureau, avec Marine Flores (présidente) et Yannick Caeiro (trésorier).</p>
+        <div class="missions">
+          <div>
+            <strong>Faire vivre la communauté des anciens</strong>
+            <p>Afterworks de cohésion partout en France et animation du réseau professionnel des diplômés.</p>
+          </div>
+          <div>
+            <strong>Accompagner les futurs ingénieurs</strong>
+            <p>Cérémonie de fin d'études, témoignages pendant la semaine des métiers et retours d'expérience sur la vie professionnelle.</p>
+          </div>
+        </div>
+        <span class="label">Mon rôle</span>
+        <ul>
+          <li>Secrétaire du bureau de l'association.</li>
+          <li>Maître de cérémonie lors de l'édition 2025 de la cérémonie de fin d'études, que l'association organise chaque année.</li>
+          <li>Organisation des afterworks SeaTech Alumni à Grenoble.</li>
+        </ul>
+        <div class="links">
+          <a href="https://seatech.univ-tln.fr/seatech-alumni-un-reseau-au-service-des-nouveaux-ingenieurs-de-seatech/" target="_blank" rel="noopener">L'article de SeaTech sur l'association</a>
+          <a href="https://www.linkedin.com/company/seatech-alumni/" target="_blank" rel="noopener">SeaTech Alumni sur LinkedIn</a>
+        </div>
+      </div>
+      <img class="alumni-photo" src="img/seatech-alumni.webp" alt="Les membres de SeaTech Alumni en tenue de soirée devant le mur de logos SeaTech" loading="lazy">
+    </div>
+    <div class="ceremony">
+      <span class="label">Cérémonie de fin d'études 2025</span>
+      <div class="ceremony-strip">
+        <img src="img/ceremonie-5.webp" alt="Clément au micro pendant la cérémonie de fin d'études" loading="lazy">
+        <img src="img/ceremonie-1.webp" alt="Les maîtres de cérémonie sur l'estrade de l'amphithéâtre" loading="lazy">
+        <img src="img/ceremonie-3.webp" alt="Clément aux côtés d'un jeune diplômé qui lit son discours" loading="lazy">
+        <img src="img/ceremonie-4.webp" alt="Clément félicite un diplômé en toque qui tient son diplôme" loading="lazy" style="object-position: 50% 12%">
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <section id="contact" class="contact">
+    <span class="label" style="color:inherit;opacity:.7">Contact</span>
+    <h2>Un projet, un poste ?<br>Écrivez-moi.</h2>
+    <p>Je cherche un poste d'ingénieur logiciel ou data à partir de novembre 2026, basé à Grenoble. Pour un cours de ski de fond, vous pouvez aussi réserver directement auprès de l'<a href="https://www.ecoledeporte.com/" target="_blank" rel="noopener">École de Porte</a>.</p>
+    <dl class="channels">
+      <div class="ch">
+        <dt>E-mail</dt>
+        <dd><code id="email">clement.basdevant38@orange.fr</code></dd>
+        <dd><button type="button" data-copy="email" data-label="Copier">Copier</button></dd>
+      </div>
+      <div class="ch">
+        <dt>LinkedIn</dt>
+        <dd><code>Clément Basdevant</code></dd>
+        <dd><a class="btn" href="https://www.linkedin.com/in/cl%C3%A9ment-basdevant-253357230" target="_blank" rel="noopener">Voir le profil</a></dd>
+      </div>
+      <div class="ch">
+        <dt>Localisation</dt>
+        <dd><code>Grenoble, France</code></dd>
+        <dd></dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer>
+    <span>© 2026 Clément Basdevant</span>
+    <span>Grenoble · 45.19° N, 5.72° E</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Pages & tabs, driven by the URL hash
+  const ROUTES = { ingenieur: 'pro', ski: 'pro', course: 'perso', parapente: 'perso', association: 'asso' };
+  const DEFAULT_TAB = { pro: 'ingenieur', perso: 'course', asso: 'association' };
+  let current = null;
+
+  function route() {
+    const h = location.hash.slice(1);
+    if (h && !ROUTES[h]) {            // plain anchor such as #contact
+      if (!current) show('pro', 'ingenieur', false);
+      const el = document.getElementById(h);
+      if (el) el.scrollIntoView();
+      return;
+    }
+    const page = ROUTES[h] || 'pro';
+    show(page, h || DEFAULT_TAB[page], true);
+  }
+
+  function show(page, tab, scroll) {
+    const pageChanged = current !== page;
+    document.querySelectorAll('[data-page]').forEach(m => { m.hidden = m.dataset.page !== page; });
+    const main = document.querySelector('[data-page="' + page + '"]');
+    main.querySelectorAll('[data-tab]').forEach(t => { t.hidden = t.dataset.tab !== tab; });
+    document.querySelectorAll('[data-tablink]').forEach(a => {
+      if (a.dataset.tablink === tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    document.querySelectorAll('[data-nav]').forEach(a => {
+      if (a.dataset.nav === page) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    current = page;
+    if (!scroll) return;
+    if (pageChanged) { window.scrollTo(0, 0); return; }
+    const bar = main.querySelector('.tracks, .tabbar');
+    if (bar && bar.getBoundingClientRect().top < 0) bar.scrollIntoView();
+  }
+
+  addEventListener('hashchange', route);
+  // First load: no scrolling unless a specific anchor was requested
+  (function init() {
+    const h = location.hash.slice(1);
+    if (ROUTES[h]) { const p = ROUTES[h]; show(p, h, p !== 'pro'); }
+    else route();
+  })();
+
+  // Copy e-mail / phone
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    const src = document.getElementById(btn.dataset.copy);
+    btn.addEventListener('click', function () {
+      const text = src.textContent.replace(/\s+(?=\d)/g, '').trim();
+      const done = () => { btn.textContent = 'Copié'; setTimeout(() => btn.textContent = btn.dataset.label, 2000); };
+      const fallback = () => {
+        const r = document.createRange(); r.selectNodeContents(src);
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Faites Ctrl+C';
+      };
+      try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
 </body>
-
 </html>

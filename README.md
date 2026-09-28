@@ -1,32 +1,19 @@
 # my-website
 
+Site personnel de Clément Basdevant : ingénieur logiciel Python & Data, moniteur de ski nordique, et côté sport (course à pied, parapente).
 
-# Portfolio de Clément Basdevant
+En ligne : https://elrelook.github.io/my-website/
 
-Bienvenue sur mon site personnel ! 
+## Contenu
 
-Ce portfolio présente mon parcours académique, mes expériences professionnelles, mes projets et mes compétences dans les domaines de l’ingénierie, des technologies de l'information et de la communication, ainsi que de l’aéronautique.
+Un site statique d'une page (`index.html`) et ses images (`img/`), organisé en trois pages avec onglets :
 
-##  Contenu du site
+- **Pro** : ingénieur logiciel & data (CaStore, expériences, compétences, formation) et moniteur de ski nordique.
+- **Association** : SeaTech Alumni.
+- **Sport & loisirs** : course à pied et parapente.
 
-- **À propos** : Une brève présentation personnelle.
-- **Formation** : Mon parcours scolaire.
-- **Expérience** : Mes stages et expériences professionnelles.
-- **Compétences** : Ce que je maîtrise techniquement.
-- **Projets** : Mes projets notables.
-- **Cursus** : Détail des enseignements et modules suivis.
+Liens directs : `#ingenieur`, `#ski`, `#association`, `#course`, `#parapente`, `#contact`.
 
-##  Technologies utilisées
+## Ancien site
 
-- HTML5
-- CSS3
-- Bootstrap 5
-- GitHub Pages (hébergement)
-
-##  Déploiement
-
-Le site est hébergé sur [GitHub Pages](https://pages.github.com/).  
-Pour le modifier localement :
-
-```bash
-git clone https://github.com/ton-utilisateur/ton-repo.git
+L'ancienne version (PHP / Bootstrap) est conservée dans la branche `ancien-site`.
