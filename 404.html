@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230F6E6E%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2728%27 fill=%27white%27 text-anchor=%27middle%27%3ECB%3C/text%3E%3C/svg%3E">
+<title>Page introuvable · Clément Basdevant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --ground: #EEF2F1; --surface: #FFFFFF; --ink: #16242E; --muted: #55656E; --line: #D3DCDC; --measure: #0F6E6E;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { color-scheme: dark; --ground: #0E161B; --surface: #152028; --ink: #E4ECEE; --muted: #93A4AB; --line: #25343D; --measure: #4CC2B8; }
+  }
+  :root[data-theme="dark"] { color-scheme: dark; --ground: #0E161B; --surface: #152028; --ink: #E4ECEE; --muted: #93A4AB; --line: #25343D; --measure: #4CC2B8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 32px 16px; background: var(--ground); color: var(--ink); font-family: var(--sans); line-height: 1.5; }
+  main { width: min(560px, 100%); display: grid; gap: 18px; }
+  .code { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--measure); letter-spacing: .08em; }
+  h1 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(40px, 9vw, 64px); line-height: .95; letter-spacing: -.03em; }
+  p { margin: 0; color: var(--muted); font-size: 17px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .links a { text-decoration: none; color: var(--ink); font-weight: 500; padding: 10px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .links a:first-child { background: var(--measure); border-color: var(--measure); color: var(--ground); }
+  .links a:hover { border-color: var(--measure); }
+</style>
+</head>
+<body>
+<main>
+  <span class="code">ERREUR 404 · PAGE NOT FOUND</span>
+  <h1>Hors piste.</h1>
+  <p>Cette page n'existe pas ou a été déplacée.<br><span lang="en">This page doesn't exist or has moved.</span></p>
+  <div class="links">
+    <a href="https://elrelook.github.io/my-website/">Retour à l'accueil</a>
+    <a href="https://elrelook.github.io/my-website/en/" lang="en">English version</a>
+  </div>
+</main>
+</body>
+</html>
