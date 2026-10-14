@@ -2,7 +2,7 @@
 
 Site personnel de Clément Basdevant : ingénieur logiciel Python & Data, moniteur de ski nordique, et côté sport (course à pied, parapente).
 
-En ligne : https://elrelook.github.io/my-website/
+En ligne : https://clement-basdevant.github.io/my-website/
 
 ## Contenu
 
