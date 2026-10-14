@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://elrelook.github.io/my-website/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elrelook.github.io/my-website/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elrelook.github.io/my-website/en/"/></url>
-  <url><loc>https://elrelook.github.io/my-website/en/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://elrelook.github.io/my-website/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elrelook.github.io/my-website/en/"/></url>
+  <url><loc>https://clement-basdevant.github.io/my-website/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://clement-basdevant.github.io/my-website/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://clement-basdevant.github.io/my-website/en/"/></url>
+  <url><loc>https://clement-basdevant.github.io/my-website/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://clement-basdevant.github.io/my-website/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://clement-basdevant.github.io/my-website/en/"/></url>
 </urlset>
